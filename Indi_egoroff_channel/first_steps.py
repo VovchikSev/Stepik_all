@@ -1,5 +1,10 @@
+# 2.2 Строки: индексы и срезы
+
 # 2.1 Cтроки и операции над ними
 
+# s = input().split()
+# for ch in s:
+#       print(f'Simvol code {ch} is {ord(ch)}.')
 
 
 
