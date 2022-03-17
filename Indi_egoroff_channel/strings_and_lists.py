@@ -1,6 +1,19 @@
 # 2.7 F-строки
 
 
+# course, amount = int(input()), int(input())
+# print(f"Current dollar rate is {course}. You want buy {amount} dollars")
+# print(f"You must pay {amount * course}")
+# # Интересный способ, через лямбду.
+# # (lambda x, y: print(f'Current dollar rate is {x}. You want buy {y} dollars\nYou must pay {x * y}'))(float(input()), int(input()))
+
+
+# на вход подае тся число секунд вывести в формате:
+# in_secund = int(input())
+# print(f"{in_secund} сек - это {in_secund // 60} мин. {in_secund % 60} сек.")
+# #  интересный момент с функцией
+# # (lambda x:print(f'{x} сек - это {x//60} мин. {x%60} сек.'))(int(input()))
+
 # 2.6 Форматирование строк Python. Метод format
 '''
 Для числа 99 предыдущим будет число 98.
