@@ -18,6 +18,4 @@
 # my_value = int(input())
 # print(round(my_value / 2) if my_value % 2 == 0 else -round((my_value + 1) / 2))
 
-my_list = sorted(list(map(int, input().split())), reverse=True)
-print(my_list)
-print(my_list[0] - my_list[2])
+# 3.3 Множественный выбор при помощи оператора elif
