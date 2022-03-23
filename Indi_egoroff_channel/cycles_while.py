@@ -3,18 +3,75 @@
 # 4  Цикл while
 # 4.1 Знакомство с циклом while
 
-"""У Васи есть n пар носков. Утром каждого дня, собираясь в школу, Вася должен надеть пару носков. 
-Вечером, прийдя со школы, Вася снимает надетые носки и выбрасывает их. 
-Каждый m-й день (в дни с номерами m,2m,3m,...) мама покупает Васе одну пару носков. 
-Она делает это поздно вечером, поэтому Вася может надеть новые носки не раньше следующего дня. 
-На сколько подряд идущих дней Васе хватит носков?"""
-"""
-Начнем с того что все начинается с 0 дня После он тратит по 1 паре носков (1 носок в day если так проще будет) 
-После каждый М дней мама покупает +1 пару носков 
-Для этого достаточно внутри цикла использовать if и проверять остаток от деления day на М и если оно равно 0 
-то прибавляем +1 носок Получается что то вроде 
-Инпут Дни = 0 While n<=1 Тут минус 1 носок Дни + 1 If day%m==0 Носок + 1 
-Надеюсь объяснил достаточно легко без спойлеров по решению)
-"""
 
-n, m = map(int, input().split())
+# """
+# Напишите программу, которая проверяет, является ли введённое натуральное число степенью двойки. 
+# Если да, то выводится сама эта степень; если нет, выводится «НЕТ»
+# """
+# n = int(input())
+# b = 1
+# a = 0
+# while b < n:
+#     b = b * 2
+#     a += 1
+
+# if b == n:
+#     print(a)
+# else:
+#     print('НЕТ')
+
+# непрерывный ввод
+# val = input()
+# my_list = [val]
+#
+# while True:
+#     t = input()
+#     if 4 < len(t) < 10:
+#         my_list.append(t)
+#     else:
+#         break
+#
+# print(my_list[-1])
+
+# all_tasks, minutes = map(int, input().split())
+# last_time = 4 * 60 - minutes
+# r_tasks = 0
+# while all_tasks > 0:
+#     time_for_task = (r_tasks + 1) * 5
+#     if last_time - time_for_task >= 0:
+#         last_time -= time_for_task
+#         r_tasks += 1
+#         all_tasks -= 1
+#     else:
+#         break
+# print(r_tasks)
+# print(last_time)
+
+# all_items = int(input())
+# used_items = a = 1
+# count = 0
+# while all_items - used_items >= 0:
+#     count += 1
+#     all_items -= used_items
+#     a += 1
+#     used_items += a
+# print(count)
+
+# first_len, second_len = map(int, input().split())
+# first_list = list(map(int, input().split()))
+# second_list = list(map(int, input().split()))
+# first_pointer = second_pointer = 0
+# result_list = []
+# while first_pointer < first_len and second_pointer < second_len:
+#     if first_list[first_pointer] < second_list[second_pointer]:
+#         result_list.append(first_list[first_pointer])
+#         first_pointer += 1
+#     else:
+#         result_list.append(second_list[second_pointer])
+#         second_pointer += 1
+# if first_pointer < first_len:
+#     result_list += first_list[first_pointer:]
+# if second_pointer < second_len:
+#     result_list += second_list[second_pointer:]
+# print(*result_list)
+
