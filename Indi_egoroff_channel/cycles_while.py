@@ -75,3 +75,24 @@
 #     result_list += second_list[second_pointer:]
 # print(*result_list)
 
+
+# man_len = int(input())
+# man_list = sorted(list(map(int, input().split())))
+# woman_len = int(input())
+# woman_list = sorted(list(map(int, input().split())))
+# man_pointer = woman_pointer = count_couples = 0
+#
+# while man_pointer < man_len and woman_pointer < woman_len:
+#     if abs(man_list[man_pointer] - woman_list[woman_pointer]) < 2:
+#         count_couples += 1
+#         woman_pointer += 1
+#         man_pointer += 1
+#     else:
+#         if man_list[man_pointer] < woman_list[woman_pointer]:
+#             man_pointer += 1
+#         else:
+#             woman_pointer += 1
+# print(count_couples)
+
+
+# 4.3 Обход всех цифр числа с помощью while
