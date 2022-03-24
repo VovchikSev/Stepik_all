@@ -1,4 +1,3 @@
-
 """doc."""
 # 4  Цикл while
 # 4.1 Знакомство с циклом while
@@ -105,8 +104,37 @@
 
 
 # перевод числа в другую систему исчисления (foundation) результат в обратном порядке
+# number = int(input())
+# foundation = 2
+# while number > 0:
+#     print(number % foundation)
+#     number //= foundation
+
+# 4.4 Нахождение всех делителей числа
+
+
 number = int(input())
-foundation = 2
-while number > 0:
-    print(number % foundation)
-    number //= foundation
+is_index = lambda x, y: x * x < y
+index = 1
+list_result = []
+# while (index * index) <= number:
+while is_index(index, number):
+    if number % index == 0:
+        list_result.append(index)
+        if index != number // index:
+            list_result.append(number // index)
+    index += 1
+print(list_result)
+print(sum(list_result))
+
+# Простое число. 1 не простое число
+# number = int(input())
+# index = 1
+# list_result = []
+# while number > 1 and (index * index) <= number and len(list_result) < 3:
+#     if number % index == 0:
+#         list_result.append(index)
+#         if index != number // index:
+#             list_result.append(number // index)
+#     index += 1
+# print("Yes" if len(list_result) == 2 else "No")
