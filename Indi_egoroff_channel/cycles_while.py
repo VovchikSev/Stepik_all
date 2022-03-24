@@ -96,3 +96,17 @@
 
 
 # 4.3 Обход всех цифр числа с помощью while
+
+# Обход всех цифр чис
+# number = int(input())
+# while number > 0:
+#     current_number = number % 10
+#     number = number // 10
+
+
+# перевод числа в другую систему исчисления (foundation) результат в обратном порядке
+number = int(input())
+foundation = 2
+while number > 0:
+    print(number % foundation)
+    number //= foundation
