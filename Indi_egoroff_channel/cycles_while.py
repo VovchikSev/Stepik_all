@@ -143,4 +143,28 @@
 
 
 # 4.5 Алгоритм Евклида
+# НОД по алгоритму Евклида
+# a, b = 21, 35
+# while a != b:
+#     if a > b:
+#         a -= b
+#     else:
+#         b -= a
+# долгий алгоритм
+#  теоретическая  a * b = НОД * НОК
+# НОК = (a * b) / НОД
+# a, b = int(input()), int(input())
+# while b > 0:
+#     b, a = a % b, b
+# print(a)
 
+
+# поиск НОК через функцию НОД
+def nod(first: int, second: int) -> int:
+    while second > 0:
+        second, first = first % second, second
+    return first
+
+
+a, b = map(int, input().split())
+print(a * b // nod(a, b))
