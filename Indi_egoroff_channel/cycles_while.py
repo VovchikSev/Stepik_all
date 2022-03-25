@@ -113,28 +113,34 @@
 # 4.4 Нахождение всех делителей числа
 
 
-number = int(input())
-is_index = lambda x, y: x * x < y
-index = 1
-list_result = []
-# while (index * index) <= number:
-while is_index(index, number):
-    if number % index == 0:
-        list_result.append(index)
-        if index != number // index:
-            list_result.append(number // index)
-    index += 1
-print(list_result)
-print(sum(list_result))
+# number = int(input())
+# is_index = lambda x, y: x * x < y
+# index = 1
+# list_result = []
+# # while (index * index) <= number:
+# для суммы всех делителей важно обработать единицу как входное число
+# while is_index(index, number) or index == number:
+#     if number % index == 0:
+#         list_result.append(index)
+#         if index != number // index:
+#             list_result.append(number // index)
+#     index += 1
+# # print(list_result)
+# print(sum(list_result))
 
 # Простое число. 1 не простое число
 # number = int(input())
+# is_index = lambda x, y: x * x < y
 # index = 1
 # list_result = []
-# while number > 1 and (index * index) <= number and len(list_result) < 3:
+# while number > 1 and is_index(index, number) and len(list_result) < 3:
 #     if number % index == 0:
 #         list_result.append(index)
 #         if index != number // index:
 #             list_result.append(number // index)
 #     index += 1
 # print("Yes" if len(list_result) == 2 else "No")
+
+
+# 4.5 Алгоритм Евклида
+
