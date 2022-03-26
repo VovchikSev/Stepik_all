@@ -160,11 +160,26 @@
 
 
 # поиск НОК через функцию НОД
-def nod(first: int, second: int) -> int:
-    while second > 0:
-        second, first = first % second, second
-    return first
+# def nod(first: int, second: int) -> int:
+#     while second > 0:
+#         second, first = first % second, second
+#     return first
+#
+#
+# a, b = map(int, input().split())
+# print(nod(a, b), a * b // nod(a, b))
+
+# 4.6 Инструкции break, continue, else
 
 
-a, b = map(int, input().split())
-print(a * b // nod(a, b))
+my_str = input()
+index = 0
+while index <= len(my_str) - 1:
+    if my_str[index] == 'a' or my_str[index] == 'e':
+        print("Ага! Нашлась")
+        break
+    else:
+        print(f"Текущая буква: {my_str[index]}")
+    index += 1
+else:
+    print("Распечатали все буквы")
