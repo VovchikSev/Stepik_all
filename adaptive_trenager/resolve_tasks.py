@@ -237,5 +237,66 @@
 #
 # print(res_list)
 
+# фрактал...
+# turn_list = ['turn 60', 'turn -120', 'turn 60']
+# order = int(input())
+# out_str = '.'
+# if order <= 1:
+#     print(*(turn_list * order), sep='\n')
+# else:
+#     for angle in range(order):
+#         out_str = out_str.replace('.', '.turn 60.turn -120.turn 60.')
+#
+#     print(*out_str.split('.'), sep='\n')
 
+"""
+Напишите программу, которая принимает на вход список целых чисел, и выводит на экран значения,
+которые повторяются в нём более одного раза.
+"""
+
+# # from collections import Counter
+# # c = Counter(input().split())
+# # print(c)
+# # print(' '.join(filter(lambda x: c[x] > 1, c)))
+# мое решение не использует модули но немного длиннее.
+# my_list = list(map(int, input().split()))
+# out_list = []
+# for val in my_list:
+#     if my_list.count(val) > 1 and val not in out_list:
+#         out_list.append(val)
+#         print(val, end=" ")
+
+
+# # охреневшее электронное табло, с нестандартным выводом
+# # https://stepik.org/lesson/21306/step/1?adaptive=true&unit=5109
+# a1 = ' -- '
+# a2 = '|  |'
+# a3 = '    '
+# a4 = '   |'
+# a5 = '|   '
+# d = {'0': [a1, a2, a2, a3, a2, a2, a1],
+#      '1': [a3, a4, a4, a3, a4, a4, a3],
+#      '2': [a1, a4, a4, a1, a5, a5, a1],
+#      '3': [a1, a4, a4, a1, a4, a4, a1],
+#      '4': [a3, a2, a2, a1, a4, a4, a3],
+#      '5': [a1, a5, a5, a1, a4, a4, a1],
+#      '6': [a1, a5, a5, a1, a2, a2, a1],
+#      '7': [a1, a4, a4, a3, a4, a4, a3],
+#      '8': [a1, a2, a2, a1, a2, a2, a1],
+#      '9': [a1, a2, a2, a1, a4, a4, a1]}
+# in_str = input()
+# out_list = []
+#
+# for index_str in range(7):  # 0 - 6 высота символа, по строкам строим, что выводить
+#     created_array = []
+#     for index_col in in_str:
+#         created_array.append(d[index_col][index_str])
+#
+#     created_array[0] = "|" + created_array[0]
+#     created_array[-1] = created_array[-1] + "|"
+#     out_list.append(" ".join(created_array))
+#
+# print('x'+(len(out_list[0])-2)*'-'+'x')
+# print(*out_list, sep="\n")
+# print('x'+(len(out_list[0])-2)*'-'+'x')
 
