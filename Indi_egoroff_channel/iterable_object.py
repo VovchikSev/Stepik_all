@@ -74,4 +74,42 @@
 #  короткое, но малопонятное решение. цикл интересен: for w in [input() for _ in range(int(input()))] можно использовать
 # # print("\n".join((w, f'{w[0]}{len(w) - 2}{w[-1]}')[len(w) > 10] for w in [input() for _ in range(int(input()))]))
 
+# 5.3 Цикл for. Обход списков и строк
+# 1
+# in_list = []
+# for _ in range(int(input())):
+#     in_list.append(input())
+# print(in_list)
 
+# 2
+# letter = input()
+# for word in input().split():
+#      if letter in word:
+#         print(word)
+
+# 3
+# my_list = list(filter(lambda x:x>0, map(int, input().split())))
+# print(min(my_list) if len(my_list) > 0 else "Empty")
+
+#  4
+# in_str = input().lower()
+# print(max(map(lambda x:in_str.count(x), in_str)))
+
+# 5
+# in_str = input()
+# print("YES" if  (sum(map(int, in_str[::2])) - sum(map(int, in_str[1::2]))) % 11 == 0 else "NO")
+
+# 6
+# my_str = list(map(int, filter(lambda value: str(value).isdigit(), input())))
+# print(len(my_str), sum(my_str))
+
+# 7
+# open = "({["
+# close = "}])"
+# res = 0
+# for char in input():
+#     if char in open:
+#         res += 1
+#     elif char in close:
+#         res -= 1
+# print("YES" if res == 0 else "NO")
