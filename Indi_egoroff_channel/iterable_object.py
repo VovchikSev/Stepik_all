@@ -113,3 +113,24 @@
 #     elif char in close:
 #         res -= 1
 # print("YES" if res == 0 else "NO")
+# оптимальный вариант решения
+# s = input()
+# stack = []
+# is_good = True
+# for i in s:
+#     if i in "({[":
+#         stack.append(i)
+#     elif i in ")}]":
+#         if len(stack) == 0:
+#             is_good = False
+#             break
+#         open_bracket = stack.pop()
+#         if open_bracket == "(" and i == ")":
+#             continue
+#         elif open_bracket == "{" and i == "}":
+#             continue
+#         elif open_bracket == "[" and i == "]":
+#             continue
+#         is_good = False
+#         break
+# print("YES" if is_good and len(stack) == 0 else "NO")
