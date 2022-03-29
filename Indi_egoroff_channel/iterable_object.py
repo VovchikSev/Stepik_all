@@ -134,3 +134,30 @@
 #         is_good = False
 #         break
 # print("YES" if is_good and len(stack) == 0 else "NO")
+#
+# 5.4 Метод подсчета. Сортировка подсчетом Python
+# 1
+# my_list =  list(map(lambda x:int(x), "11111")) #input()
+# val_list = [0] * (max(my_list) + 1)
+# for val in my_list:
+#     val_list[val] +=1
+# for val in range(len(val_list)):
+#     if val_list[val] > 0:
+#         print(val, val_list[val])
+# 2
+# incoming_len = int(input()) # совсем ненужный параметр
+# my_list = list(map(int, input().split()))
+# # len_iteration = (max(my_list) - min(my_list)) + 1
+# val_list = [0] * ((max(my_list) - min(my_list)) + 1)  # len_iteration
+# my_offset = 0 - min(my_list)
+#
+# for index in my_list:
+#     cur_value = index + my_offset
+#     val_list[cur_value] += 1
+#
+# for index in range(len(val_list)):
+#     cur_value = index - my_offset
+#     if val_list[index] > 0:
+#         print((str(cur_value) + " ") * val_list[index], end="")
+# # вместо всего того огорода одна строчка...
+# print(*sorted(list(map(int, input().split()))))
