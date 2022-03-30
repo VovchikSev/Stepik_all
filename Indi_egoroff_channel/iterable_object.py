@@ -161,3 +161,26 @@
 #         print((str(cur_value) + " ") * val_list[index], end="")
 # # вместо всего того огорода одна строчка...
 # print(*sorted(list(map(int, input().split()))))
+
+# 5.5 Вложенные циклы.
+# 1
+# Найдите сумму всех четырехзначных чисел, сумма цифр каждого из которых равна 20
+# my_sum = 0
+# for val in range(1000, 10000):
+#     t_val = 0
+#     for internal_val in str(val):
+#         t_val += int(internal_val)
+#     if t_val == 20:
+#         my_sum += val
+#         print(t_val)
+# print(my_sum)
+# готовое решение, но нужно вложенные циклы.
+# print(sum([x for x in range(1000, 10000) if sum(map(int, list(str(x)))) == 20]))
+#
+# 2 Программа принимает на вход целое положительное число n (n<=15) - количество уровней, ваша задача вывести n
+# уровней, в каждом из которых стоят числа от 1 до значения уровня.
+# for val in range(1, int(input()) + 1):
+#     print(*list(range(1, val + 1)))
+
+
+
