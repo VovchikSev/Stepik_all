@@ -215,16 +215,59 @@
 
 # Сортировка вставкой
 
-list_len = int(input())
-my_list = list(map(int, input().split()))
-for i in range(len(my_list)):
-    cursor = my_list[i]
-    pos = i
+# list_len = int(input())
+# my_list = list(map(int, input().split()))
+# for i in range(len(my_list)):
+#     cursor = my_list[i]
+#     pos = i
+#
+#     while pos > 0 and my_list[pos - 1] > cursor:
+#         # Меняем местами число, продвигая по списку
+#         my_list[pos] = my_list[pos - 1]
+#         pos = pos - 1
+#     # Остановимся и сделаем последний обмен
+#     my_list[pos] = cursor
+# print(my_list)
 
-    while pos > 0 and my_list[pos - 1] > cursor:
-        # Меняем местами число, продвигая по списку
-        my_list[pos] = my_list[pos - 1]
-        pos = pos - 1
-    # Остановимся и сделаем последний обмен
-    my_list[pos] = cursor
-print(my_list)
+# 5.6 Вложенные списки
+# 1
+# matrix = [list(map(int, input().split())) for _ in range(int(input())) ]
+# my_sum = 0
+# for rows_index in range(len(matrix)):
+#     for col_index in range(len(matrix[rows_index])):
+#         if rows_index == col_index:
+#             my_sum += matrix[rows_index][col_index]
+# print(my_sum)
+
+# 2
+# matrix = [list(map(int, input().split())) for _ in range(int(input())) ]
+# for col_index in range(len(matrix[0])):
+#     tmp = []
+#     for rows_index in range(len(matrix)):
+#         tmp.append(matrix[rows_index][col_index])
+#     print(*tmp)
+
+# 3
+# matrix = [list(map(int, input().split())) for _ in range(int(input())) ]
+# for rows_index in range(len(matrix) -1, -1, -1):
+#     tmp = []
+#     for col_index in range(len(matrix[rows_index]) - 1, -1, -1):
+#         # tmp.append(matrix[rows_index][col_index])
+#         tmp.append(matrix[col_index][rows_index])
+#     print(*tmp)
+
+# 4
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# for rows_index in matrix:
+#     tmp = rows_index.copy()
+#     tmp.reverse()
+#     print(*tmp)
+
+# 5
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# for rows_index in range(len(matrix) - 1, -1, -1):
+#     print(*matrix[rows_index])
+
+# 6
