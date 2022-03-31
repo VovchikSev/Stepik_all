@@ -181,6 +181,50 @@
 # уровней, в каждом из которых стоят числа от 1 до значения уровня.
 # for val in range(1, int(input()) + 1):
 #     print(*list(range(1, val + 1)))
+# 3
 
 
+# def is_prime(in_number):
+#     if in_number in (2, 3):
+#         return True
+#     for val in range(2, int(in_number ** 0.5) + 1):
+#         if in_number % val == 0:
+#             return False
+#     return True
+#
+#
+# number = int(input())
+# counter = 0
+# for value in range(number + 1,  number * 2 + 1):
+#     if is_prime(value):
+#         counter += 1
+# print(counter)
 
+# сортировка пузырьком
+# list_len = int(input())
+# my_list = list(map(int, input().split()))
+# counter = 0
+# for i in range(list_len - 1):
+#     for j in range(list_len - i - 1):
+#         if my_list[j] > my_list[j + 1]:
+#             counter +=1
+#             my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]
+#
+# print(*my_list)
+# print(counter)
+
+# Сортировка вставкой
+
+list_len = int(input())
+my_list = list(map(int, input().split()))
+for i in range(len(my_list)):
+    cursor = my_list[i]
+    pos = i
+
+    while pos > 0 and my_list[pos - 1] > cursor:
+        # Меняем местами число, продвигая по списку
+        my_list[pos] = my_list[pos - 1]
+        pos = pos - 1
+    # Остановимся и сделаем последний обмен
+    my_list[pos] = cursor
+print(my_list)
