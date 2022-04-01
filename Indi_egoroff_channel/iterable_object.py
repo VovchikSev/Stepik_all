@@ -271,3 +271,126 @@
 #     print(*matrix[rows_index])
 
 # 6
+# matrix = [list(map(int, input().split())) for _ in range(5)]
+# for row_index in range(len(matrix)):
+#     for col_index in range(len(matrix[row_index])):
+#         if matrix[row_index][col_index] == 1:
+#             print(abs(2 - row_index) + abs(2 - col_index))
+#             break
+#
+# for row in matrix:
+#     print(*row)
+#
+# 7
+#
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# print(*[sum(value) for value in matrix])
+#
+# sum_cols = []
+# for col_index in range(len(matrix[0])):
+#     cur_sum = 0
+#     for rows_index in range(len(matrix)):
+#         cur_sum += matrix[rows_index][col_index]
+#     sum_cols.append(cur_sum)
+# print(*sum_cols)
+
+#  8
+# matrix = [list(map(int, input().split())) for _ in range(int(input()))]
+# flag = True
+# for row_index in range(len(matrix)):
+#     if not flag:
+#         break
+#     for col_index in range(len(matrix[row_index])):
+#         if row_index != col_index and matrix[row_index][col_index] != matrix[col_index][row_index]:
+#             flag = False
+#             break
+# print('Yes' if flag else 'No')
+
+# 9
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# result_sum = []
+# for value in matrix:
+#     result_sum.append(sum(value))
+# print(max(result_sum), result_sum.index(max(result_sum)), sep="\n")
+
+# 10
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# max_val = max(matrix[0])
+# max_str = 0
+# max_col = matrix[0].index(max(matrix[0]))
+#
+# for row_index in range(len(matrix)):
+#     cur_max = max(matrix[row_index])
+#     if cur_max > max_val:
+#         max_val = cur_max
+#         max_str = row_index
+#         max_col = matrix[row_index].index(max(matrix[row_index]))
+# print(f"{max_val}\n{max_str} {max_col}")
+#
+# 11 не решено, сдано в кометах нечто
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# list_sum = [sum(val) for val in matrix]
+# list_max = [max(val) for val in matrix]
+# if list_max.count(max(list_max)) == 1:
+#     print("значение", *list_max)
+#     print(list_max.index(max(list_max)))
+# else:
+#     print("сумма", *list_sum)
+#     print(list_sum.index(max(list_sum)))
+# # n, m = map(int, input().split())
+# # r, s, i = 0, 0, 0
+# # for j in range(n):
+# #     a = list(map(int, input().split()))
+# #     for b in range(m):
+# #         if a[b] > r or (a[b] == r and sum(a) > s):
+# #             r, i, s = a[b], j, sum(a)
+# # print(i)
+#
+# 12
+# str_len, col_len = map(int, input().split())
+# matrix = [list(map(int, input().split())) for _ in range(str_len)]
+# list_max = [max(val) for val in matrix]
+# print(list_max)
+# print(list_max.count(max(list_max)))
+#
+# 13
+# list_wall = []
+# for _ in range(4):
+#     list_wall.append(list(map(str, input().split())))
+# if list_wall[0]==list_wall[1] or list_wall[2]==list_wall[3]:
+#     print("No")
+# else:
+#     print("Yes")
+# print(*list_wall, sep="\n")
+#
+# 14
+# str_len, col_len = map(int, input().split())
+# in_matrix = [list(input()) for _ in range(str_len)]
+# input()
+# fix_matrix = [list(input()) for _ in range(str_len)]
+# err_count = 0
+# for row_index in range(len(in_matrix)):
+#     for col_index in range(len(in_matrix[row_index])):
+#         if in_matrix[row_index][col_index] == fix_matrix[row_index][col_index]:
+#             err_count += 1
+# print(err_count)
+#
+# 15
+# str_len, x_value = map(int, input().split())
+# count = 0
+# for str_index in range(str_len):
+#     for col_index in range(str_len):
+#         if (str_index + 1) * (col_index + 1) == x_value:
+#             count += 1
+# print(count)
+#
+# 5.7 Вложенные списки, Часть 2
+# 1
+
+
+
+
