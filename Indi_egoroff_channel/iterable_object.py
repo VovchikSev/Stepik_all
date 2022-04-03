@@ -389,8 +389,115 @@
 # print(count)
 #
 # 5.7 Вложенные списки, Часть 2
+#
 # 1
+# matrix = [list(map(int, input().split())) for _ in range(int(input()))]
+# count = 0
+# for i in range(len(matrix) - 1):
+#     for j in range(i + 1, len(matrix)):
+#         if matrix[i][0] == matrix[j][1]:
+#             count += 1
+#         if matrix[i][1] == matrix[j][0]:
+#             count += 1
+# print(count)
+#
+# 2 барьерные элементы
+# y_len, x_len = map(int, input().split())
+# matrix = ['.' * (x_len + 2)]
+#
+# for row_index in range(y_len):
+#     row = "." + input() + "."
+#     matrix.append(row)
+# matrix.append('.' * (x_len + 2))
+# counter = 0
+# for row_index in range(1, y_len + 1):
+#     for col_index in range(1, x_len + 1):
+#         if matrix[row_index][col_index] == "." and matrix[row_index + 1][col_index] == "." and matrix[row_index][
+#             col_index + 1] == "." and matrix[row_index - 1][col_index] == "." and matrix[row_index][col_index - 1] == ".":
+#             counter += 1
+#
+# for row in matrix:
+#     print(*row)
+# print(counter)
+#
+#  3
+# y_len, x_len = map(int, input().split())
+# matrix = []
+# start_index = 0
+# direction = True
+# for row_index in range(y_len):
+#     if direction:
+#         t_matrix = [value for value in range(start_index, start_index + x_len)]  # от старта к старт + x_len
+#     else:
+#         t_matrix = [value for value in range(start_index + x_len -1, start_index -1, -1 )]  # от старт + x_len к старт - 1, -1
+#     print(*t_matrix)
+#     direction = not direction
+#     start_index += x_len
+#
+# 4
+# y_len, x_len = map(int, input().split())
+# matrix = [input().split() for _ in range(y_len)]
+# result = "#Black&White"
+# for row_index in range(y_len):
+#     for col_index in range(x_len):
+#         if matrix[row_index][col_index] in ['C', 'M', 'Y', 'G']:
+#             result = "#Color"
+#             break
+# print(result)
+# print(*matrix)
+#
+# 5 матрица по спирали
+# max_value = int(input())
+# matrix = [[0] * max_value for _ in range(max_value)]
+# index = 1
+# y = 0
+# x = -1
+# d_row = 0
+# d_col = 1
+# while index <= max_value ** 2:
+#     if 0 <= y + d_row < max_value and 0 <= x + d_col < max_value and matrix[y + d_row ][x + d_col] == 0:
+#         y += d_row
+#         x += d_col
+#         matrix[y][x] = index
+#         index += 1
+#     else:  # повороты
+#         if d_col == 1:
+#             d_col = 0
+#             d_row = 1
+#         elif d_row == 1:
+#             d_row = 0
+#             d_col = -1
+#         elif d_col == -1:
+#             d_col = 0
+#             d_row = -1
+#         elif d_row == -1:
+#             d_row = 0
+#             d_col = 1
+# for row in matrix:
+#     print(*row)
 
-
-
-
+# 6
+#
+# y_len, x_len = map(int, input().split())
+# matrix = [input() for _ in range(y_len)]
+#
+# result = [[False] * x_len for _ in range(y_len)]
+#
+# for row_index in range(y_len):
+#     if "S" not in matrix[row_index]:
+#         for col_index in range(x_len):
+#             result[row_index][col_index] = True
+#
+# for col_index in range(x_len):
+#     is_find = False
+#     for row_index in range(y_len):
+#         if matrix[row_index][col_index] == "S":
+#             is_find = True
+#             break
+#     if not is_find:
+#         for row_index in range(y_len):
+#             result[row_index][col_index] = True
+# count = 0
+# for row in result:
+#     count += row.count(True)
+# print(count)
