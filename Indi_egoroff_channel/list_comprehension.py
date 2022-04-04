@@ -18,19 +18,13 @@
 # print(my_list)
 #
 # 4
-orig_str = list(input())
-bad_str = list(input())
-find_char = ""
-for ch in bad_str:
-    if ch not in orig_str:
-        find_char = ch
-        break
-
-if find_char == "":
-    for index in range(len(orig_str)):
-        if orig_str[index] != bad_str[index]:
-            find_char = bad_str[index]
-            break
-print(find_char if find_char != "" else bad_str[-1])
-# print(orig_str)
-# print(bad_str)
+"""
+Если a<=b необходимо сформировать список квадратов целых чисел на интервале от а до b включительно и вывести его на экран.
+Если же a>b, необходимо сформировать список кубов целых чисел на интервале от a до b включительно,
+двигаясь в порядке убывания, и затем вывести его.
+"""
+a, b = map(int, input().split())
+if a <= b:
+    print(*[val ** 2 for val in range(a, b + 1)])
+else:
+    print(*[val ** 3 for val in range(a, b - 1, -1)])
