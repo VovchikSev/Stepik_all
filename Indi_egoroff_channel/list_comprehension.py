@@ -18,8 +18,10 @@
 # print(my_list)
 #
 # 4
-a, b = map(int, input().split())
-if a <= b:
-    print(*[val ** 2 for val in range(a, b + 1)])
-else:
-    print(*[val ** 3 for val in range(a, b - 1, -1)])
+phrase = 'Take only the words that start with t in this sentence'
+my_list = []
+for word in phrase.split():
+    if word[0].lower() == "t":
+        my_list.append(word)
+print(my_list)
+
