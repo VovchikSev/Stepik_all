@@ -17,11 +17,8 @@
 # my_list = [val for val in range(in_value, in_value * in_value + 1) if bool(val % 2)]
 # print(my_list)
 #
-# 4
-phrase = 'Take only the words that start with t in this sentence'
-my_list = []
-for word in phrase.split():
-    if word[0].lower() == "t":
-        my_list.append(word)
-print(my_list)
+# 4 [j for i in list for j in i]
+# vector = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]]
+# short_list = [val for val_array in vector for val in val_array]
+# print(short_list)
 
