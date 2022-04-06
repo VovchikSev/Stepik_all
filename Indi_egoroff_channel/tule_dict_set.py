@@ -54,3 +54,58 @@
 #     print(f"INFO: {city} is a city in {find_key}")
 # else:
 #     print(f"ERROR: Country for {city} not found")
+#
+# 6.2 Ситуации, где полезно использовать словарь
+# 2
+# in_word = "ZZzzzZ34 WWw777"  # input()
+# my_dict = {}
+# for ch in in_word:
+#     if ch.isalpha():
+#         my_dict[ch.lower()] = my_dict.get(ch.lower(), 0) + 1
+# print(my_dict)
+
+# 3
+#
+# data = {'my_friends': {'count': 10, 'items':
+#     [{'first_name': 'Kurt', 'id': 621547005, 'last_name': 'Cobain', 'bdate': '31.8.2005'},
+#     {'first_name': 'Виолетта', 'id': 484200150, 'last_name': 'Кастилио'},
+#     {'first_name': 'Иринка', 'id': 21886133, 'last_name': 'Бушуева', 'bdate': '28.8.1942'},
+#     {'first_name': 'Данил', 'id': 282456573, 'last_name': 'Греков', 'bdate': '4.7.2002'},
+#     {'first_name': 'Валентин', 'id': 184902932, 'last_name': 'Долматов', 'bdate': '25.5'},
+#     {'first_name': 'Евгений', 'id': 620469646, 'last_name': 'Шапорин', 'bdate': '6.12.1982'},
+#     {'first_name': 'Ангелина', 'id': 622328862, 'last_name': 'Краснова', 'bdate': '4.11.1995'},
+#     {'first_name': 'Иван', 'id': 576015198, 'last_name': 'Вирин', 'bdate': '2.2.1915'},
+#     {'first_name': 'Паша', 'id': 386922406, 'last_name': 'Воронов', 'bdate': '27.9'},
+#     {'first_name': 'Ольга', 'id': 622170942, 'last_name': 'Савченкова', 'bdate': '20.12'}]}}
+# out_list = []
+# for i in data['my_friends']['items']:
+#     out_list.append(i['first_name'])
+# print(*sorted(out_list), sep='\n')
+
+# 4
+
+# def get_dict(a_str: str) -> dict:
+#     result = {}
+#     for ch in a_str:
+#         result[ch.lower()] = result.get(ch.lower(), 0) + 1
+#     return result
+#
+#
+# print("YES" if get_dict(input()) == get_dict(input()) else "NO")
+#
+# 5
+
+morze = {'a': '•—', 'b': '—•••', 'c': '—•—•', 'd': '—••',
+         'e': '•', 'f': '••—•', 'g': '——•', 'h': '••••',
+         'i': '••', 'j': '•———', 'k': '—•—', 'l': '•—••',
+         'm': '——', 'n': '—•', 'o': '———', 'p': '•——•',
+         'q': '——•—', 'r': '•—•', 's': '•••', 't': '—',
+         'u': '••—', 'v': '•••—', 'w': '•——', 'x': '—••—',
+         'y': '—•——', 'z': '——••'}
+in_str = "Houston we have a problem".lower() # input().lower()
+# out_list = []
+for word in in_str.split():
+    # print(word)
+    # out_list.append(" ".join([morze[val] for val in word]))
+    print(" ".join([morze[val] for val in word]))
+# print(*out_list, sep="\n")
