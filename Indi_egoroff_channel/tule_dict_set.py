@@ -6,6 +6,7 @@
 # for value in range(1, in_value + 1):
 #     my_dict[str(value)] = value ** 2
 # print(my_dict)
+# print({a: a ** 2 for a in range(1, int(input()) + 1)}) аналог вывода сгенерированного словаря
 #
 # 2
 # index = 97
@@ -43,13 +44,13 @@
 #     "France": ["Paris", "Marseille", "Toulouse"]
 # }
 # city = input()
-# finded_key = ""
+# find_key = ""
 # for key, value in countries.items():
 #     if city in value:
-#         finded_key = key
+#         find_key = key
 #         break
 #
-# if len(finded_key) > 0:
-#     print(f"INFO: {city} is a city in {finded_key}")
+# if len(find_key) > 0:
+#     print(f"INFO: {city} is a city in {find_key}")
 # else:
 #     print(f"ERROR: Country for {city} not found")
