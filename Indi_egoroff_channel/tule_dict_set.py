@@ -121,4 +121,4 @@ my_tuple = (-214, 181, -139, 448, -664, -66, 213, 832, 717, -462, -924, -706, -8
 # print(tuple([i for i in range(int(input()), int(input())+1)]))
 # 5
 in_value = int(input())
-print(tuple([i for i in range(in_value, (in_value ** 2) + 1)]))
+print(tuple([value for value in range(in_value, (in_value ** 2) + 1) if bool(value % 2)]))
