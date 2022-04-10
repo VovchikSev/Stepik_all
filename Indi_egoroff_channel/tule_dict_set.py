@@ -111,14 +111,38 @@
 # # print(*out_list, sep="\n")
 
 # 6.4 кортежи
-my_tuple = (-214, 181, -139, 448, -664, -66, 213, 832, 717, -462, -924, -706, -85, -244, -222, -340, -482, -518, -781, 759, -593, 905, -354, -377, -141, -742, 383, -381, 109, -639, -480, -810, -686, 892, -612, 696, 993, 791, 631, -493, -218, -829, -275, 619, -628, -241, -565, -835, -69, 747, 711, -252, -811, -407, -153, 904, 933, -254, 307, -493, -419, -109, -543, 155, -127, 613, -452, -459, 856, 562, 333, -66, -77, -598, -779, -278, 867, 321, -20, -415, -357, 735, -906, -14, -370, 453, -630, -736, -830, -917, 32, 422, -895, 198, 284, 472, -986, -964, -73, 29)
-# 3
-# print(min(my_tuple), max(my_tuple))
-# 4
-# my_sum = [val for val in my_tuple if bool(val % 2)]
-# print(sum(my_sum) / len(my_sum))
-# 4
-# print(tuple([i for i in range(int(input()), int(input())+1)]))
-# 5
-in_value = int(input())
-print(tuple([value for value in range(in_value, (in_value ** 2) + 1) if bool(value % 2)]))
+
+# 6.5 Множества в Python
+
+# list_a = [int(value) for value in input().split()]
+# list_b = [int(value) for value in input().split()]
+# list_digit = [int(value) for value in input() if value.isdigit()]
+# lit_out = sorted(set([value for value in list_digit if list_digit.count(value) > 1]))
+# if len(lit_out) > 0:
+#     print(*lit_out)
+# else:
+#     print("NO")
+# my_dict = {'Били': [], 'Вили': [], 'Дили': []}
+# while True:
+#     in_str = input()
+#     if in_str == "конец":
+#         break
+#     name, coment = in_str.split(": ")
+#     my_dict[name] = my_dict.get(name, []) + [coment]
+#
+# my_dict = dict(sorted(my_dict.items(), key=lambda x: -len(set(x[1]))))  #, reverse=True))
+#
+# for key, value in my_dict.items():
+#     print(f"Количество уникальных комментаторов у {key} - {len(set(value))}")
+
+# my_str = input()
+# print(len(set(input())) % 2 == 1)
+
+# in_list = [int(value) for value in input().split()]
+# print(len(in_list) - len(set(in_list)))
+
+
+# print(len(set([value for value in input().lower() if value.isalpha()])))
+# alphabet = [chr(value) for value in range(97, 97 + 26)]
+# i = input()
+print("YES" if len(set([value for value in input().lower() if value.isalpha()])) == 26 else "NO")
