@@ -20,25 +20,29 @@
 #             count_upper += 1
 #         if ch in "!@#$%*":
 #             count_spec += 1
-#     print("Perfect password" if all([len(password), count_digit > 3, count_upper > 0 and count_spec > 0]) else "Easy peasy")
+#     flag = len(password) > 9 and count_digit > 2 and count_upper > 0 and count_spec > 0
+#     print("Perfect password" if flag else "Easy peasy")
 
 
-def count_letters(in_str: str):
-    count_upper = 0
-    count_lower = 0
-    for ch in in_str:
-        if ch.isalpha():
-            print(f"IsAlpha({ch})")
-            if ch.lower():
-                print(f"islower({ch})")
-                count_lower += 1
-            else:
-                print(f"isupper({ch})")
-                count_upper += 1
+# def count_letters(in_str: str):
+#
+#     count_upper = 0
+#     count_lower = 0
+#     for ch in in_str:
+#         if str.isalpha(ch):
+#             print(f"IsAlpha({ch})")
+#             if str.islower(ch):
+#                 print(f"islower({ch})")
+#                 count_lower += 1
+#             if str.isupper(ch):
+#                 print(f"isupper({ch})")
+#                 count_upper += 1
+#
+#     print(f"Количество заглавных символов: {count_upper}")
+#     print(f"Количество строчных символов: {count_lower}")
+#
+#
+# count_letters("Привет, Старина")
+# count_letters("QWERTY")
 
-    print(f"Количество заглавных символов: {count_upper}")
-    print(f"Количество строчных символов: {count_lower}")
-
-
-count_letters("Привет, Старина")
-count_letters("QWERTY")
+# 7.2 Зачем нужны функции в программировании
