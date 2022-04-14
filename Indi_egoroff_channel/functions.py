@@ -49,3 +49,20 @@
 
 # 7.3 Возвращаемое значение функции. Оператор return
 
+# def factorial(value: int) -> int:
+#     factorial = 1
+#     while value > 1:
+#         factorial *= value
+#         value -= 1
+#     return factorial
+
+# 7.3 Возвращаемое значение функции.
+# 3
+my_list = [int(input()) for _ in range(int(input()))]
+print(my_list)
+
+
+def gcd(a, b):
+    while b > 0:
+        a, b = b, a % b
+    return a
