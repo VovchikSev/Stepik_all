@@ -58,11 +58,12 @@
 
 # 7.3 Возвращаемое значение функции.
 # 3
-my_list = [int(input()) for _ in range(int(input()))]
-print(my_list)
 
+def first_unique_char(in_str:str):
+    out_index = -1
+    for char in in_str:
+        if in_str.count(char) == 1:
+            out_index = in_str.index(char)
+            break
+    return out_index
 
-def gcd(a, b):
-    while b > 0:
-        a, b = b, a % b
-    return a
