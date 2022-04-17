@@ -59,11 +59,18 @@
 # 7.3 Возвращаемое значение функции.
 # 3
 
-def first_unique_char(in_str:str):
-    out_index = -1
-    for char in in_str:
-        if in_str.count(char) == 1:
-            out_index = in_str.index(char)
-            break
-    return out_index
+# def first_unique_char(in_str:str):
+#     out_index = -1
+#     for char in in_str:
+#         if in_str.count(char) == 1:
+#             out_index = in_str.index(char)
+#             break
+#     return out_index
 
+# 7.4 Docstring, строка документирования
+# 7.6 Область видимости: локальная, глобальная и встроенная
+MIN_DRIVING_AGE = 18
+
+
+def allowed_driving(name, age):
+    print(f"{name} может водить" if age >= MIN_DRIVING_AGE else f"{name} еще рано садиться за руль")

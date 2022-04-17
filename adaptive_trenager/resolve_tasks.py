@@ -308,3 +308,119 @@
 #     else:
 #         return ((x - 2) ** 2) + 1
 # print(f(float(input())))
+
+
+# rome_digit = \
+#     {0: '',
+#      1: 'I',
+#      2: 'II',
+#      3: 'III',
+#      4: 'IV',
+#      5: 'V',
+#      6: 'VI',
+#      7: 'VII',
+#      8: 'VIII',
+#      9: 'IX',
+#      10: 'X',
+#      20: 'XX',
+#      30: 'XXX',
+#      40: 'XL',
+#      50: 'L',
+#      60: 'LX',
+#      70: 'LXX',
+#      80: 'LXXX',
+#      90: 'XC',
+#      100: 'C',
+#      200: 'CC',
+#      300: 'CCC',
+#      400: 'CD',
+#      500: 'D',
+#      600: 'DC',
+#      700: 'DCC',
+#      800: 'DCCC',
+#      900: 'CM',
+#      1000: 'M',
+#      2000: 'MM',
+#      3000: 'MMM'}
+#
+# in_value = input()
+#
+# list_digits = [int(value) for value in in_value]
+# rome_digits = []
+# for index in range(len(list_digits)):
+#     step = (len(list_digits) - 1) - index
+#     rome_digits.append(rome_digit[list_digits[index] * 10 ** step])
+# print(rome_digits)
+# print("".join(rome_digits))
+"""
+Порядок действий:
+1) Заводим словарь: rom={'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+2) Заменяем все в инпуте на значения словаря по ключам.
+3) Заводим переменную в которую будем приплюсовывать все элементы полученного списка
+   в след шаге - Z
+4) Перебираем циклом все элементы,
+   если след элемент больше текущего,
+   то записываем след минус текущий в общую сумму Z, если нет - то прибавляем просто
+   текущий элемент в общую сумму.
+"""
+
+d = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+}
+
+in_str = input()
+list_values = [d[value] for value in in_str]
+result = 0
+for index in range(len(list_values)):
+    # print(list_values[index])
+    next_index = index + 1
+    if next_index < len(list_values):
+        if d[in_str[index]] < d[in_str[next_index]]:
+            result += d[in_str[next_index]] - d[in_str[index]]
+        else:
+            result += d[in_str[index]]
+    else:
+        pass  # последний
+
+print(in_str)
+print(list_values)
+print(result)
+
+# Выведите таблицу размером n, заполненную целыми числами от n до n^2
+#   по спирали, выходящей из левого верхнего угла и закрученной по часовой стрелке
+
+# max_value = int(input())
+# matrix = [[0] * max_value for _ in range(max_value)]
+# index = 1
+# y = 0
+# x = -1
+# d_row = 0
+# d_col = 1
+# while index <= max_value ** 2:
+#     if 0 <= y + d_row < max_value and 0 <= x + d_col < max_value and matrix[y + d_row ][x + d_col] == 0:
+#         y += d_row
+#         x += d_col
+#         matrix[y][x] = index
+#         index += 1
+#     else:  # повороты
+#         if d_col == 1:
+#             d_col = 0
+#             d_row = 1
+#         elif d_row == 1:
+#             d_row = 0
+#             d_col = -1
+#         elif d_col == -1:
+#             d_col = 0
+#             d_row = -1
+#         elif d_row == -1:
+#             d_row = 0
+#             d_col = 1
+# for row in matrix:
+#     print(*row)
+#
