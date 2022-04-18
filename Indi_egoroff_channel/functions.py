@@ -69,8 +69,14 @@
 
 # 7.4 Docstring, строка документирования
 # 7.6 Область видимости: локальная, глобальная и встроенная
-MIN_DRIVING_AGE = 18
+
+def info_kwargs(**kwargs):
+    [print(f'{k} = {v}') for k, v in sorted(kwargs.items())]
 
 
-def allowed_driving(name, age):
-    print(f"{name} может водить" if age >= MIN_DRIVING_AGE else f"{name} еще рано садиться за руль")
+info_kwargs(first_name="John", last_name="Doe", age=33)
+""" данный вызов печатает следующие строки
+age = 33
+first_name = John
+last_name = Doe
+"""
