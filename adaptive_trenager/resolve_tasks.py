@@ -352,46 +352,63 @@
 #     rome_digits.append(rome_digit[list_digits[index] * 10 ** step])
 # print(rome_digits)
 # print("".join(rome_digits))
-"""
-Порядок действий:
-1) Заводим словарь: rom={'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
-2) Заменяем все в инпуте на значения словаря по ключам.
-3) Заводим переменную в которую будем приплюсовывать все элементы полученного списка
-   в след шаге - Z
-4) Перебираем циклом все элементы,
-   если след элемент больше текущего,
-   то записываем след минус текущий в общую сумму Z, если нет - то прибавляем просто
-   текущий элемент в общую сумму.
-https://stepik.org/lesson/21443/step/1?adaptive=true&unit=5116
-"""
 
-d = {
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000
-}
 
-in_str = input()
-list_values = [d[value] for value in in_str]
-result = 0
-for index in range(len(list_values)):
-    # print(list_values[index])
-    next_index = index + 1
-    if next_index < len(list_values):
-        if d[in_str[index]] < d[in_str[next_index]]:
-            result += d[in_str[next_index]] - d[in_str[index]]
-        else:
-            result += d[in_str[index]]
-    else:
-        pass  # последний
-
-print(in_str)
-print(list_values)
-print(result)
+# """
+# Порядок действий:
+# 1) Заводим словарь: rom={'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+# 2) Заменяем все в инпуте на значения словаря по ключам.
+# 3) Заводим переменную в которую будем приплюсовывать все элементы полученного списка
+#    в след шаге - Z
+# 4) Перебираем циклом все элементы,
+#    если след элемент больше текущего,
+#    то записываем след минус текущий в общую сумму Z, если нет - то прибавляем просто
+#    текущий элемент в общую сумму.
+#    доработать для чисел до 4000
+# https://stepik.org/lesson/21443/step/1?adaptive=true&unit=5116
+# Получилось по такому алгоритму:
+# Еще как вариант с одним циклом и прямым ходом и одним if.
+#
+# Создаем словарь (ключ римская: значение арабская). Переводим список через сравнение в арабские.
+# Суммируем все до кучи.
+# Через цикл пробегаемся с одним if сравнивая что больше ли текущая предыдущей,
+# если да, то из общей суммы вычитаем двойное значение предыдущей (так как она уже в сумме есть,
+# то нужно вычесть и ее двойное значение).
+# """
+#
+# d = {
+#     'I': 1,
+#     'V': 5,
+#     'X': 10,
+#     'L': 50,
+#     'C': 100,
+#     'D': 500,
+#     'M': 1000
+# }
+#
+# in_str = input()
+# list_values = [d[value] for value in in_str]
+# result = sum(list_values)
+#
+# for index in range(len(list_values)):
+#     if 0 < index < len(list_values):
+#         if list_values[index] > list_values[index - 1]:
+#             result -= (list_values[index - 1] * 2)
+#
+# # for index in range(len(list_values)):
+# #     # print(list_values[index])
+# #     next_index = index + 1
+# #     if next_index < len(list_values):
+# #         if d[in_str[index]] < d[in_str[next_index]]:
+# #             result += d[in_str[next_index]] - d[in_str[index]]
+# #         else:
+# #             result += d[in_str[index]]
+# #     else:
+# #         pass  # последний
+#
+# print(in_str)
+# print(list_values)
+# print(result)
 
 # Выведите таблицу размером n, заполненную целыми числами от n до n^2
 #   по спирали, выходящей из левого верхнего угла и закрученной по часовой стрелке
@@ -425,3 +442,27 @@ print(result)
 # for row in matrix:
 #     print(*row)
 #
+
+# start, finish = [int(value) for value in input().split()]
+# for value in range(start, finish + 1):
+#     # в одну строку
+#     # print('Fizz' * (value % 3 == 0) + 'Buzz' * (value % 5 == 0) or value)
+#     if value % 3 == 0 and value % 5 == 0:
+#         print("FizzBuzz")
+#     else:
+#         if value % 3 == 0:
+#             print("Fizz")
+#         elif value % 5 == 0:
+#             print("Buzz")
+#         else:
+#             print(value)
+
+# https://stepik.org/lesson/22238/step/1?adaptive=true&unit=5314
+# while True:
+#     a = str(input())
+#     if a == 'End':
+#         print('Good bye!')
+#         break
+#     else:
+#         print(f'Processing \"{a}\" command...')
+
