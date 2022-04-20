@@ -70,13 +70,11 @@
 # 7.4 Docstring, строка документирования
 # 7.6 Область видимости: локальная, глобальная и встроенная
 
-def info_kwargs(**kwargs):
-    [print(f'{k} = {v}') for k, v in sorted(kwargs.items())]
+def print_list(in_list: list):
+    if len(in_list) > 0:
+        print(in_list.pop(), end=" ")
+        print_list(in_list)
 
 
-info_kwargs(first_name="John", last_name="Doe", age=33)
-""" данный вызов печатает следующие строки
-age = 33
-first_name = John
-last_name = Doe
-"""
+my_len = int(input())
+print_list([int(value) for value in input().split()])
