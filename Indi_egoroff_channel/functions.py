@@ -70,11 +70,59 @@
 # 7.4 Docstring, строка документирования
 # 7.6 Область видимости: локальная, глобальная и встроенная
 
-def print_list(in_list: list):
-    if len(in_list) > 0:
-        print(in_list.pop(), end=" ")
-        print_list(in_list)
+# def print_list(in_list: list):
+#     if len(in_list) > 0:
+#         print(in_list.pop(), end=" ")
+#         print_list(in_list)
+#
+#
+# my_len = int(input())
+# print_list([int(value) for value in input().split()])
 
+# def formula_fibonachi(n):
+#     root_5 = 5 ** 0.5
+#     phi = ((1 + root_5) / 2)
+#
+#     a = ((phi ** n) - ((-phi) ** -n)) / root_5
+#
+#     return round(a)
 
-my_len = int(input())
-print_list([int(value) for value in input().split()])
+# def fibonacci(n):
+#     if n <= 0:
+#         print("Incorrect input")
+#     elif n == 1:
+#         return 0
+#     elif n == 2:
+#         return 1
+#     else:
+#         return fibonacci(n - 1) + fibonacci(n - 2)
+#
+#
+# num = int(input()) + 1
+# print(fibonacci(num))
+
+# def list_sum_recursive(sum_list):
+#     if len(sum_list) == 0:
+#         return 0
+#     return sum_list.pop() + list_sum_recursive(sum_list)
+#
+#
+# in_list = list(map(int, input().split()))
+# print(list_sum_recursive(in_list))
+
+# def flatten(in_list):
+#     result_list = []
+#     for i in in_list:
+#         if type(i) is int:
+#             result_list.append(i)
+#         else:
+#             result_list += flatten(i)
+#     return result_list
+#
+#
+# print(flatten([1, [2, 3, [4]], 5]))  # вернет [1,2,3,4,5]
+# print(flatten([1, [2,3], [[2], 5], 6]))  # вернет [1,2,3,2,5,6]
+# print(flatten([[[[9]]], [1,2], [[8]]]))  # вернет [9,1,2,8]
+
+# 7.10 Рекурсия в Python. Рекурсивная функция Часть 2
+
