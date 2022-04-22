@@ -126,3 +126,53 @@
 
 # 7.10 Рекурсия в Python. Рекурсивная функция Часть 2
 
+# сортировка слиянием
+# # функция merge_two_list должна объединить два списка
+# def merge_two_list(a, b):
+#     result_list = []
+#     a_index = b_index = 0
+#     while a_index < len(a) and b_index < len(b):
+#         if a[a_index] < b[b_index]:
+#             result_list.append(a[a_index])
+#             a_index += 1
+#         else:
+#             result_list.append(b[b_index])
+#             b_index += 1
+#
+#     if a_index < len(a):
+#         result_list += a[a_index:]
+#     if b_index < len(b):
+#         result_list += b[b_index:]
+#
+#     return result_list
+#
+# # функция merge_sort должна выполнить сортировку
+# def merge_sort(s):
+#     if len(s) == 1:
+#         return s
+#     middle = len(s) // 2
+#     left_half = merge_sort(s[:middle])
+#     right_half = merge_sort(s[middle:])
+#     return merge_two_list(left_half, right_half)
+#
+#
+# in_trash = [6, 2, 19, 5, 10, 7, 11]
+# alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+# print(merge_sort(alist))
+# print(alist)
+
+# быстрая сортировка
+# # функция quick_sort должна выполнить сортировку
+# def quick_sort(s):
+#     if len(s) <= 1:
+#         return s
+#     element = s[len(s) // 2]
+#     left_list = list(filter(lambda value: value < element, s))
+#     center_list = [value for value in s if value == element]  # list(filter(lambda value: value == element, s))
+#     right_list = list(filter(lambda value: value > element, s))
+#
+#     return quick_sort(left_list) + center_list + quick_sort(right_list)
+#
+#
+# in_trash = [6, 2, 19, 5, 10, 7, 11]
+# print(quick_sort(in_trash))
