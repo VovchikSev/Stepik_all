@@ -466,3 +466,6 @@
 #     else:
 #         print(f'Processing \"{a}\" command...')
 
+
+# https://stepik.org/lesson/22733/step/2?adaptive=true&unit=5343
+print(input())
