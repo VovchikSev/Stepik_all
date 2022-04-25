@@ -466,6 +466,11 @@
 #     else:
 #         print(f'Processing \"{a}\" command...')
 
+in_str = input()
+pattern = input()
+list_index = []
+for index in range(len(in_str)):
+    if in_str[index:].startswith(pattern):
+        list_index.append(index)
+print(*list_index if len(list_index) > 0 else [-1])
 
-# https://stepik.org/lesson/22733/step/2?adaptive=true&unit=5343
-print(input())
