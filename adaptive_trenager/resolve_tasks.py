@@ -466,11 +466,24 @@
 #     else:
 #         print(f'Processing \"{a}\" command...')
 
-in_str = input()
-pattern = input()
-list_index = []
-for index in range(len(in_str)):
-    if in_str[index:].startswith(pattern):
-        list_index.append(index)
-print(*list_index if len(list_index) > 0 else [-1])
+# in_str = input()
+# pattern = input()
+# list_index = []
+# for index in range(len(in_str)):
+#     if in_str[index:].startswith(pattern):
+#         list_index.append(index)
+# print(*list_index if len(list_index) > 0 else [-1])
 
+# def hanoi(pyramid: int, start: int, finish: int):
+#     if pyramid == 1:
+#         print(f"{start} - {finish}")
+#     else:
+#         tmp = 6 - start - finish
+#         hanoi(pyramid - 1, start, tmp)
+#         print(f"{start} - {finish}")
+#         hanoi(pyramid - 1, tmp, finish)
+#
+#
+# hanoi(int(input()), 1, 3)
+
+# https://stepik.org/lesson/26124/step/1?adaptive=true&unit=8110
