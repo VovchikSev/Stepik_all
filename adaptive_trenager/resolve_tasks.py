@@ -486,4 +486,79 @@
 #
 # hanoi(int(input()), 1, 3)
 
-# https://stepik.org/lesson/26124/step/1?adaptive=true&unit=8110
+"""
+Как вариант цикла, в который нужно входить, если изначально остаток не равен нулю, в таком случае ответ (результат
+деления) можно выводить сразу
+while ost != 0:
+        delimoe, delitel = delitel, ost
+        ost = delimoe % delitel
+        res = delimoe // delitel
+        ans.append(res)
+    print (*ans)
+"""
+
+# first_value, second_value = list(map(int, input().split("/")))
+# result = [first_value // second_value]
+# ost = first_value % second_value
+# while ost != 0:
+#     first_value, second_value = second_value, ost
+#     ost = first_value % second_value
+#     result.append(first_value // second_value)
+#
+# print(*result)
+
+# транспонирование матрицы
+
+
+# def transpose(matrix):
+#     res = []
+#     rows = len(matrix)
+#     column = len(matrix[0])
+#     for column_index in range(column):
+#         tmp = []
+#         for row_Index in range(rows):
+#             tmp = tmp + [matrix[row_Index][column_index]]
+#         res = res + [tmp]
+#     return res
+#
+#
+# rows, column = map(int, input().split())
+# my_matrix = [[int(i) for i in input().split()] for _ in range(rows)]
+# [print(*row) for row in transpose(my_matrix)]
+
+# https://stepik.org/lesson/21982/step/1?adaptive=true&unit=5240
+
+# def jolly_jumpers(in_list: list) -> str:
+#     if len(in_list) <= 1:
+#         return 'Jolly'
+#     control_list = [value for value in range(1, len(in_list))]
+#     res_list = []
+#     for index in range(len(in_list) - 1):
+#         res_list.append(abs(in_list[index] - in_list[index + 1]))
+#     return 'Jolly' if control_list == sorted(res_list) else 'Not jolly'
+#
+#
+# my_list = list(map(int, input().split()))
+# print(jolly_jumpers(my_list))
+
+# 5.20 Game of life
+# https://stepik.org/lesson/22778/step/1?adaptive=true&unit=5351
+
+rows, columns = map(int, input().split())
+field_list = [list(map(lambda val: 1 if val == "X" else 0, input())) for _ in range(rows)]
+
+
+def count_sos(str_: int, col: int) -> int:
+    pass  # посчитать сумму соседей
+
+
+print(field_list)
+# заполнить выходное поле точками или нулями
+res_list = []
+for row in range(rows):
+    for column in range(len(field_list)):
+        pass
+
+for row in range(rows):
+    for column in range(len(field_list)):
+        count_sos(row, column)
