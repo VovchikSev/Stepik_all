@@ -552,12 +552,9 @@ field_list = [list(map(lambda val: 1 if val == "X" else 0, input())) for _ in ra
 #     p = a[i][j-1]+
 #         a[i-1][j]+
 #         a[i-n+1][j]+
-
 #         a[i][j-m+1]+
-
 #         a[i-n+1][j-m+1]+
 #         a[i-1][j-1]+
-
 #         a[i-1][j-m+1]+
 #         a[i-n+1][j-1]
 #     return(p)
