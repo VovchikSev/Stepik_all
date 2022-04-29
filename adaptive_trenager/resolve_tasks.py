@@ -548,17 +548,74 @@ rows, columns = map(int, input().split())
 field_list = [list(map(lambda val: 1 if val == "X" else 0, input())) for _ in range(rows)]
 
 
-def count_sos(str_: int, col: int) -> int:
-    pass  # посчитать сумму соседей
+# def obhod (a, i, j, n, m):
+#     p = a[i][j-1]+
+#         a[i-1][j]+
+#         a[i-n+1][j]+
+
+#         a[i][j-m+1]+
+
+#         a[i-n+1][j-m+1]+
+#         a[i-1][j-1]+
+
+#         a[i-1][j-m+1]+
+#         a[i-n+1][j-1]
+#     return(p)
 
 
-print(field_list)
+def count_sos(str_index: int, col_index: int) -> int:
+    n = len(field_list)
+    m = len(field_list[str_index])
+    return field_list[str_index][col_index - 1] + \
+           field_list[str_index - 1][col_index] + \
+           field_list[str_index - n + 1][col_index] + \
+           field_list[str_index][col_index - m + 1] + \
+           field_list[str_index - n + 1][col_index - m + 1] + \
+           field_list[str_index - 1][col_index - 1] + \
+           field_list[str_index - 1][col_index - m + 1] + \
+           field_list[str_index - n + 1][col_index - 1]
+
+
 # заполнить выходное поле точками или нулями
 res_list = []
 for row in range(rows):
-    for column in range(len(field_list)):
-        pass
+    res_list.append([0] * len(field_list[0]))
+# Клетка умирает, если число ее живых соседей не равно 2 или 3.
+# В клетку зарождается жизнь, если число ее живых соседей ровно 3.
 
+# print(res_list)
 for row in range(rows):
     for column in range(len(field_list)):
-        count_sos(row, column)
+        live = count_sos(row, column)
+        is_value = bool(field_list[row][column])
+        if is_value:
+            if live in (2, 3):
+                res_list[row][column] = 1
+        else:
+            if live == 3:
+                res_list[row][column] = 1
+
+for list_out in res_list:
+    out = list(map(lambda x: "X" if x == 1 else ".", list_out))
+    # out = list(lambda x: "X" if x == 1 else "." for _ in list_out)
+    print("".join(out))
+"""
+...XX.
+.XX...
+..X...
+XX....
+X..XX.
+
+.X..XX
+.XX...
+X.X...
+XXXX.X
+XXXXX.
+
+.X..X.
+.XX...
+X.X...
+XXXX..
+XXXXX.
+
+"""
