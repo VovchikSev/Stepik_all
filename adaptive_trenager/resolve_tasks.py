@@ -541,78 +541,147 @@ while ost != 0:
 # my_list = list(map(int, input().split()))
 # print(jolly_jumpers(my_list))
 
-# 5.20 Game of life
-# https://stepik.org/lesson/22778/step/1?adaptive=true&unit=5351
+# # 5.20 Game of life
+# # https://stepik.org/lesson/22778/step/1?adaptive=true&unit=5351
+#
+# rows, columns = map(int, input().split())
+# field_list = [list(map(lambda val: 1 if val == "X" else 0, input())) for _ in range(rows)]
+#
+#
+# def count_live(str_index: int, col_index: int) -> int:
+#     rows_ = len(field_list)
+#     columns_ = len(field_list[str_index])
+#
+#     def get_index(coord: int, move: int, lens: int) -> int:
+#         return (coord + move + lens) % lens
+#
+#     return field_list[get_index(str_index, -1, rows_)][get_index(col_index, -1, columns_)] + \
+#            field_list[get_index(str_index, -1, rows_)][col_index] + \
+#            field_list[get_index(str_index, -1, rows_)][get_index(col_index, 1, columns_)] + \
+#            field_list[str_index][get_index(col_index, -1, columns_)] + \
+#            field_list[str_index][get_index(col_index, 1, columns_)] + \
+#            field_list[get_index(str_index, 1, rows_)][get_index(col_index, -1, columns_)] + \
+#            field_list[get_index(str_index, 1, rows_)][col_index] + \
+#            field_list[get_index(str_index, 1, rows_)][get_index(col_index, 1, columns_)]
+#
+#
+# res_list = []
+# for row in range(rows):
+#     res_list.append([0] * len(field_list[0]))
+# # Клетка умирает, если число ее живых соседей не равно 2 или 3.
+# # В клетку зарождается жизнь, если число ее живых соседей ровно 3.
+#
+# # print(res_list)
+# for row in range(rows):
+#     for column in range(len(field_list[0])):
+#         live = count_live(row, column)
+#         is_value = bool(field_list[row][column])
+#         if is_value:
+#             if live in (2, 3):
+#                 res_list[row][column] = 1
+#         else:
+#             if live == 3:
+#                 res_list[row][column] = 1
+#
+# for list_out in res_list:
+#     out = list(map(lambda x: "X" if x == 1 else ".", list_out))
+#     print("".join(out))
+#
+# from collections import Counter, OrderedDict
+#
+#
+# class Hand:
+#     def __init__(self, cards):
+#         self.cards = cards
+#         self.values = [x.value for x in self.cards]
+#         self.suits = [x.suit for x in self.cards]
+#         self.true_values = sorted([x.true_value for x in self.cards])
+#         self.counter = Counter(self.values)
+#         self.value_amounts = self.counter.values()
+#
+#     def pair(self):
+#         return max(self.value_amounts) == 2
+#
+#     def two_pairs(self):
+#         return list(self.value_amounts).count(2) == 2
+#
+#     def three_of_a_kind(self):
+#         return max(self.value_amounts) == 3
+#
+#     def straight(self):
+#         first_value = self.true_values[0]
+#         return self.true_values == list(range(first_value, first_value + 5))
+#
+#     def flush(self):
+#         return len(set(self.suits)) == 1
+#
+#     def full_house(self):
+#         return 3 in self.value_amounts and 2 in self.value_amounts
+#
+#     def four_of_a_kind(self):
+#         return max(self.value_amounts) == 4
+#
+#     def straight_flush(self):
+#         return self.straight() and len(set(self.suits)) == 1
+#
+#     def royal_flush(self):
+#         return self.true_values == list(range(10, 15)) and len(set(self.suits)) == 1
+#
+#     def __str__(self):
+#         hand = OrderedDict()
+#         hand['Royal Flush'] = self.royal_flush()
+#         hand['Straight Flush'] = self.straight_flush()
+#         hand['Four of a Kind'] = self.four_of_a_kind()
+#         hand['Full House'] = self.full_house()
+#         hand['Flush'] = self.flush()
+#         hand['Straight'] = self.straight()
+#         hand['Three of a Kind'] = self.three_of_a_kind()
+#         hand['Two Pairs'] = self.two_pairs()
+#         hand['Pair'] = self.pair()
+#
+#         for k, fn in hand.items():
+#             if fn:
+#                 return k
+#         return 'High Card'
+#
+#
+# class Card:
+#     def __init__(self, c):
+#         self.value = c[:-1]
+#         self.suit = c[-1]
+#         self.get_true_value()
+#
+#     def get_true_value(self):
+#         elders = {'J': 11, 'Q': 12, 'K': 13, 'A': 14}
+#         self.true_value = 0
+#         try:
+#             self.true_value = int(self.value)
+#         except ValueError:
+#             self.true_value = elders[self.value]
+#
+#
+# inp = input().split()
+# cards = []
+#
+# for c in inp:
+#     card = Card(c)
+#     cards.append(card)
 
-rows, columns = map(int, input().split())
-field_list = [list(map(lambda val: 1 if val == "X" else 0, input())) for _ in range(rows)]
-
-
-# def obhod (a, i, j, n, m):
-#     p = a[i][j-1]+
-#         a[i-1][j]+
-#         a[i-n+1][j]+
-#         a[i][j-m+1]+
-#         a[i-n+1][j-m+1]+
-#         a[i-1][j-1]+
-#         a[i-1][j-m+1]+
-#         a[i-n+1][j-1]
-#     return(p)
-
-
-def count_sos(str_index: int, col_index: int) -> int:
-    n = len(field_list)
-    m = len(field_list[str_index])
-    return field_list[str_index][col_index - 1] + \
-           field_list[str_index - 1][col_index] + \
-           field_list[str_index - n + 1][col_index] + \
-           field_list[str_index][col_index - m + 1] + \
-           field_list[str_index - n + 1][col_index - m + 1] + \
-           field_list[str_index - 1][col_index - 1] + \
-           field_list[str_index - 1][col_index - m + 1] + \
-           field_list[str_index - n + 1][col_index - 1]
-
-
-# заполнить выходное поле точками или нулями
-res_list = []
-for row in range(rows):
-    res_list.append([0] * len(field_list[0]))
-# Клетка умирает, если число ее живых соседей не равно 2 или 3.
-# В клетку зарождается жизнь, если число ее живых соседей ровно 3.
-
-# print(res_list)
-for row in range(rows):
-    for column in range(len(field_list)):
-        live = count_sos(row, column)
-        is_value = bool(field_list[row][column])
-        if is_value:
-            if live in (2, 3):
-                res_list[row][column] = 1
-        else:
-            if live == 3:
-                res_list[row][column] = 1
-
-for list_out in res_list:
-    out = list(map(lambda x: "X" if x == 1 else ".", list_out))
-    # out = list(lambda x: "X" if x == 1 else "." for _ in list_out)
-    print("".join(out))
-"""
-...XX.
-.XX...
-..X...
-XX....
-X..XX.
-
-.X..XX
-.XX...
-X.X...
-XXXX.X
-XXXXX.
-
-.X..X.
-.XX...
-X.X...
-XXXX..
-XXXXX.
-
-"""
+# hand = Hand(cards)
+# print(hand)
+# то же самое но намного короче и понятнее
+# hand = input().split()
+# v = sorted('234567891JQKA'.index(i[0]) for i in hand)
+# if v == [0, 1, 2, 3, 12]: v = [0, 4]
+# d = sorted(v.count(i) for i in v)
+# flush = len(set(i[-1] for i in hand)) == 1
+# if d[-1] == 4:
+#     print('Four of a Kind')
+# elif d[-1] == 3:
+#     print(['Three of a Kind', 'Full House'][d[0] == 2])
+# elif d[-1] == 2:
+#     print(['Pair', 'Two Pairs'][d.count(2) > 2])
+# elif v[-1] - v[0] == 4:
+#     print(['Straight', 'Straight Flush', 'Royal Flush'][flush + (v[0] == 8 and flush)])
+# else:
+#     print(['High Card', 'Flush'][flush])

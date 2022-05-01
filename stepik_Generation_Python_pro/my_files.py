@@ -120,3 +120,4 @@
 # with open(input()) as output:
 #     print(output.readlines()[-2])
 #     # конец области видимости.
+
