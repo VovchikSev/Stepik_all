@@ -45,25 +45,53 @@
 #             tree_.append(int(txt_num))
 # print(len(tree_), sum(two_))
 
-import json
+# import json
+# max_sale = 0
+# max_name = ''
+# max_last_name = ''
+# with open("f:/manager_sales.json", "r", encoding='utf-8') as file:
+#     js_data = json.load(file)
+#     for element in js_data:
+#
+#         name = element["manager"]["first_name"]
+#         last_name = element["manager"]["last_name"]
+#         total = 0
+#         for car in element["cars"]:
+#             total += car["price"]
+#         if total > max_sale:
+#             max_sale = total
+#             max_name = name
+#             max_last_name = last_name
+#     print(max_name, max_last_name, max_sale)
 
-max_sale = 0
-max_name = ''
-max_last_name = ''
-with open("f:/manager_sales.json", "r", encoding='utf-8') as file:
-    js_data = json.load(file)
-    for element in js_data:
+# import json
+# group_id = 0
+# womans = 0
+#
+# with open("f:/group_people.json", "r", encoding='utf-8') as file:
+#     js_data = json.load(file)
+#     for element in js_data:
+#         # print(element)
+#         tmp_id = element['id_group']
+#         woman_in_group = 0
+#         for person in element['people']:
+#             print(person)
+#             if person['gender'] == 'Female' and person['year'] > 1977:
+#                 woman_in_group += 1
+#         if woman_in_group > womans:
+#             womans = woman_in_group
+#             group_id = tmp_id
+# print(group_id, womans) # ответ 9 10
 
-        name = element["manager"]["first_name"]
-        last_name = element["manager"]["last_name"]
-        total = 0
-        for car in element["cars"]:
-            total += car["price"]
+# import json
+# js_data = {}
+# lines = []
 
-
-        if total > max_sale:
-            max_sale = total
-            max_name = name
-            max_last_name = last_name
-
-    print(max_name, max_last_name, max_sale)
+# with open("f:/Alphabet.json", "r", encoding='utf-8') as file:
+#     js_data = json.load(file)
+#
+# with open("f:/Abracadabra.txt", "r", encoding='utf-8') as file:
+#     for ch in file.read():
+#         if ch in js_data.keys():
+#             ch = js_data.get(ch)
+#         print(ch, end="")
