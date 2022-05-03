@@ -95,3 +95,92 @@
 #         if ch in js_data.keys():
 #             ch = js_data.get(ch)
 #         print(ch, end="")
+
+# https://stepik.org/lesson/372111/step/2?unit=359665
+# subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Physics', 93),('History', 82)]
+# # print(sorted(subject_marks, key=lambda x: x[1]), sep="\n")
+# [print(*value) for value in sorted(subject_marks, key=lambda x: x[1])]
+
+# subject_marks = [('English', 88), ('Science', 90), ('Maths', 97),
+#                  ('Physics', 93), ('History', 82), ('French', 78),
+#                  ('Art', 58), ('Chemistry', 76), ('Programming', 91)]
+# [print(*value) for value in sorted(subject_marks, key=lambda x: x[1], reverse=True)]
+
+# subject_marks = [('English', 88), ('Science', 90), ('Maths', 88),
+#                  ('Physics', 93), ('History', 78), ('French', 78),
+#                  ('Art', 78), ('Chemistry', 88), ('Programming', 91)]
+# new_list = sorted(subject_marks, key=lambda x: x[0].lower(),)
+# [print(*value) for value in sorted(new_list, key=lambda x:x[1], reverse=True)]
+
+# models = [{'make': 'Nokia', 'model': 216, 'color': 'Black'},
+#           {'make': 'Mi Max', 'model': 2, 'color': 'Gold'},
+#           {'make': 'Samsung', 'model': 7, 'color': 'Blue'},
+#           {'make': 'Apple', 'model': 10, 'color': 'Silver'},
+#           {'make': 'Oppo', 'model': 9, 'color': 'Red'},
+#           {'make': 'Huawei', 'model': 4, 'color': 'Grey'},
+#           {'make': 'Honor', 'model': 3, 'color': 'Black'}]
+#
+# for device in sorted(models, key=lambda val: val['color']):
+#     print(f"Производитель: {device['make']}, модель: {device['model']}, цвет: {device['color']}")
+
+# in_dict = {}
+# while True:
+#     in_str = input()
+#     if in_str == "конец":
+#         break
+#     name, cost = in_str.split(": ")
+#     in_dict[name] = int(cost)
+#
+# for name, cost in sorted(in_dict.items(), key=lambda val: val[1], reverse=True):
+#     print(name, cost)
+
+# my_dict = {}
+# for _ in range(int(input())):
+#     in_value = input()
+#     my_dict[in_value] = my_dict.get(in_value, 0) + 1
+#
+# max_awards = sorted(my_dict.items(), key=lambda val: val[1], reverse=True)[0]
+# min_awards = sorted(my_dict.items(), key=lambda val: val[1])[0]
+#
+# print(*max_awards)
+# print(*min_awards)
+
+# my_dict = {}
+# for _ in range(int(input())):
+#     number, name = input().split()
+#     my_dict.setdefault(name, [])
+#     my_dict[name].append(number)
+#
+# for _ in range(int(input())):
+#     name = input()
+#     if name in my_dict.keys():
+#         print(*my_dict[name])
+#     else:
+#         print("Неизвестный номер")
+
+# my_dict = {}
+# for _ in range(int(input())):
+#     name, day, month = input().split()
+#     my_dict[month] = my_dict.get(month, []) + [name]
+#
+# for _ in range(int(input())):
+#     month = input()
+#     if month in my_dict.keys():
+#         print(*sorted(my_dict[month]))
+#     else:
+#         print("Нет данных")
+
+# my_dict = {}
+# while True:
+#     in_value = input()
+#     if in_value == "конец":
+#         break
+#     name, rank = in_value.split()
+#     my_dict[name] = my_dict.get(name, []) + [int(rank)]
+#
+# for key in my_dict:
+#     # t_list = my_dict[key]
+#     my_dict[key] = sum(my_dict[key]) / len(my_dict[key])
+#
+# for value in sorted(my_dict.items(),key=lambda val: (val[1], val[0])):
+#     print(*value)
