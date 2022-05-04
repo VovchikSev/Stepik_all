@@ -112,6 +112,7 @@
 # new_list = sorted(subject_marks, key=lambda x: x[0].lower(),)
 # [print(*value) for value in sorted(new_list, key=lambda x:x[1], reverse=True)]
 
+# не сдано----------------------------------------------------
 # models = [{'make': 'Nokia', 'model': 216, 'color': 'Black'},
 #           {'make': 'Mi Max', 'model': 2, 'color': 'Gold'},
 #           {'make': 'Samsung', 'model': 7, 'color': 'Blue'},
