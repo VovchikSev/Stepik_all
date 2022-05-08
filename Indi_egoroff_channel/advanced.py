@@ -176,12 +176,14 @@
 #     in_value = input()
 #     if in_value == "конец":
 #         break
-#     name, rank = in_value.split()
+#     name, rank = in_value.split(", ")
 #     my_dict[name] = my_dict.get(name, []) + [int(rank)]
 #
-# for key in my_dict:
-#     # t_list = my_dict[key]
-#     my_dict[key] = sum(my_dict[key]) / len(my_dict[key])
+# res_dict = {}
+# for key, value in sorted(my_dict.items()):
+#     res_dict[key] = sum(value) / len(value)
 #
-# for value in sorted(my_dict.items(),key=lambda val: (val[1], val[0])):
+# # for value in sorted(my_dict.items(), key=lambda val: (val[1], val[0])):
+# for value in sorted(res_dict.items(), key=lambda p: p[1], reverse=True):
 #     print(*value)
+
