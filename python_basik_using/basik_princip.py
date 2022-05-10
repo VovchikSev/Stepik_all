@@ -33,8 +33,10 @@ get bar b
     "global": ["", set(a)]
     "foo": ["global", set(b)] смотреть есть ли в текущем словаре, 
     искомое значение. если нет ммотрим выше пока не стнет родитель = ""
-
-
+{
+  'global': ['', {'a'}],
+  'foo': ['global', {'b'}],
+  'bar': ['foo', {'a'}]}
 }
 
 """
@@ -74,7 +76,7 @@ for _ in range(in_count):
         my_dict[name_sp] = [arg, set()]
 
     elif cmd == "get":
-        # получить пременную arg из namesp
+        # получить переменную arg из name_sp
         print(get_value(name_sp, arg))
 
 print(my_dict)
