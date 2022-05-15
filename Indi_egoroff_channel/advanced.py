@@ -135,16 +135,16 @@
 # for name, cost in sorted(in_dict.items(), key=lambda val: val[1], reverse=True):
 #     print(name, cost)
 
-# my_dict = {}
-# for _ in range(int(input())):
-#     in_value = input()
-#     my_dict[in_value] = my_dict.get(in_value, 0) + 1
-#
-# max_awards = sorted(my_dict.items(), key=lambda val: val[1], reverse=True)[0]
-# min_awards = sorted(my_dict.items(), key=lambda val: val[1])[0]
-#
-# print(*max_awards)
-# print(*min_awards)
+my_dict = {}
+for _ in range(int(input())):
+    in_value = input()
+    my_dict[in_value] = my_dict.get(in_value, 0) + 1
+
+max_awards = sorted(my_dict.items(), key=lambda val: val[1], reverse=True)[0]
+min_awards = sorted(my_dict.items(), key=lambda val: val[1])[0]
+
+print(*max_awards, sep=", ")
+print(*min_awards, sep=", ")
 
 # my_dict = {}
 # for _ in range(int(input())):

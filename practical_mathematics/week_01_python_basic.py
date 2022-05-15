@@ -32,6 +32,7 @@
 # s = (p * (p - a) * (p - b) * (p - c)) ** 0.5
 # print(s)
 
+# Площадь ромба
 # ac = float(input())
 # bd = float(input())
 # s = (ac * bd) / 2
@@ -39,24 +40,29 @@
 # print(round(s, 1))
 # print(s)
 
+# Площадь шестиугольника и 5 треугольников
 # a = float(input())
 # s = ((3 ** 0.5) / 4) * a ** 2
 # s = s * 11
 # print(s)
 # print(round(s))
 
-
+# 9 друзей шестиугольника
 # def s_trio(in_a: float) -> float:
 #     return ((3 ** 0.5) / 4) * in_a ** 2
-
-
+#
+#
 # a = float(input())
 # s_f = 6 * s_trio(a) + 6 * s_trio(a / 2) + 3 * (a ** 2)
+# print(round(s_f))
 # print(s_f, round(s_f))
 
+# Додекаэдр
 # a = float(input())
-# print(round(20.65 * a ** 2, 2))
-# print(round(7.66 * a ** 2, 2))
+# s = 3 * a ** 2 * (5 * (5 + 2 * 5 ** 0.5)) ** 0.5
+# v = a ** 3 / 4 * (15 + 7 * (5 ** 0.5))
+# print(round(s, 2))
+# print(round(v, 2))
 
 # про муху.
 # L = float(input())
