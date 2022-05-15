@@ -67,8 +67,7 @@ class Buffer:
 
     def add(self, *a):
         self.buffer += a
-        last_index = -5 if len()
-        self.in_list = self.buffer[-1]
+
         # добавить следующую часть последовательности
 
 
