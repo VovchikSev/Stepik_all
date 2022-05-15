@@ -59,10 +59,18 @@
 # print(round(7.66 * a ** 2, 2))
 
 # про муху.
-L = float(input())
-v1 = float(input())
-v2 = float(input())
-vm = float(input())
+# L = float(input())
+# v1 = float(input())
+# v2 = float(input())
+# vm = float(input())
+#
+# t = L / (v1 + v2)
+# print(vm * t)
 
-t = L / (v1 + v2)
-print(vm * t)
+
+# my_list1 = list(map(int, input().split()))
+# my_list2 = list(map(int, input().split()))
+# print(f"{sum(my_list1)}#{sum(my_list2)}")
+
+my_list = input().split()
+print(len(my_list), my_list.count("one"))
