@@ -1,4 +1,3 @@
-
 # https://stepik.org/lesson/24460/step/10?unit=6766
 """
 9
@@ -18,6 +17,8 @@ None
 bar
 foo
 """
+
+
 # in_count = int(input())
 # my_dict = {"global": ["", set()]}
 #
@@ -60,29 +61,51 @@ foo
 # print(my_dict)
 
 # https://stepik.org/lesson/24461/step/9?unit=6767
-class Buffer:
-    def __init__(self):
-        self.buffer = []
+# class Buffer:
+#     def __init__(self):
+#         self.buffer = []
+#
+#     def add(self, *a):
+#         for value in a:
+#             # print(value)
+#             self.buffer.append(value)
+#             # print(self.buffer)
+#             if len(self.buffer) == 5:
+#                 print(sum(self.buffer))
+#                 self.buffer = []
+#
+#     def get_current_part(self):
+#         return self.buffer
+#
+#
+# buf = Buffer()
+# buf.add(1, 2, 3)
+# buf.get_current_part()  # вернуть [1, 2, 3]
+# buf.add(4, 5, 6)  # print(15) – вывод суммы первой пятерки элементов
+# buf.get_current_part()  # вернуть [6]
+# buf.add(7, 8, 9, 10)  # print(40) – вывод суммы второй пятерки элементов
+# buf.get_current_part()  # вернуть []
+# buf.add(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)  # print(5), print(5) – вывод сумм третьей и четвертой пятерки
+# buf.get_current_part()  # вернуть [1]
+
+class A:
+    val = 1
+
+    def foo(self):
+        A.val += 2
+
+    def bar(self):
+        self.val += 1
 
 
-    def add(self, *a):
-        self.buffer += a
+a = A()
+b = A()
 
-        # добавить следующую часть последовательности
+a.bar()
+a.foo()
 
+c = A()
 
-    def get_current_part(self):
-        return self.in_list
-        # вернуть сохраненные в текущий момент элементы последовательности
-        # в порядке, в котором они были добавлены
-
-
-buf = Buffer()
-buf.add(1, 2, 3)
-buf.get_current_part() # вернуть [1, 2, 3]
-buf.add(4, 5, 6) # print(15) – вывод суммы первой пятерки элементов
-buf.get_current_part() # вернуть [6]
-buf.add(7, 8, 9, 10) # print(40) – вывод суммы второй пятерки элементов
-buf.get_current_part() # вернуть []
-buf.add(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) # print(5), print(5) – вывод сумм третьей и четвертой пятерки
-buf.get_current_part() # вернуть [1]
+print(a.val)
+print(b.val)
+print(c.val)
