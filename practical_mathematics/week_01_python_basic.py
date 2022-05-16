@@ -78,5 +78,5 @@
 # my_list2 = list(map(int, input().split()))
 # print(f"{sum(my_list1)}#{sum(my_list2)}")
 
-my_list = input().split()
-print(len(my_list), my_list.count("one"))
+my_list = list(map(int, input().split()))
+print(sum(map(int, input().split())))
