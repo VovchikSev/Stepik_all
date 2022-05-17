@@ -18,7 +18,6 @@ bar
 foo
 """
 
-
 # in_count = int(input())
 # my_dict = {"global": ["", set()]}
 #
@@ -88,24 +87,127 @@ foo
 # buf.add(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)  # print(5), print(5) – вывод сумм третьей и четвертой пятерки
 # buf.get_current_part()  # вернуть [1]
 
-class A:
-    val = 1
+# class_structure = {}
+# for _ in range(int(input())):
+#     in_list = input().split()
+#     ancestors = []
+#     a_name = in_list[0]
+#     if len(in_list) > 0:
+#         ancestors = in_list[2:]
+#     t_set = class_structure.get(a_name, set([a_name]))
+#     t_set = t_set.union(set(ancestors))
+#     class_structure[a_name] = t_set
+#
+# for _ in range(int(input())):
+#     in_list = input().split()
+#     c_name = in_list[0]
+#     if len(in_list) == 2:
+#         ancestor = in_list[1]
+#     else:
+#         ancestor = None
+#     if ancestor in class_structure.keys():
+#         val = class_structure[ancestor]
+#         # print(val,  c_name, ancestor)
+#         print("Yes" if c_name in val else "No")
+#     else:
+#         print("No")
+#
+# print(class_structure)
 
-    def foo(self):
-        A.val += 2
 
-    def bar(self):
-        self.val += 1
+# https://github.com/mxmaslin/stepik/blob/master/Python%20-%20основы%20и%20применение/1.6%20Наследование%20классов%20%208.md
+classes = {}
 
 
-a = A()
-b = A()
+def add_class(classes, class_name, parents):
+    if class_name not in classes:
+        classes[class_name] = []
+    classes[class_name].extend(parents)
+    for parent in parents:
+        if parent not in classes:
+            classes[parent] = []
 
-a.bar()
-a.foo()
 
-c = A()
+def found_path(classes, start, end, path=[]):
+    path = path + [start]
+    if start == end:
+        return path
+    if start not in classes:
+        return None
+    for node in classes[start]:
+        if node not in path:
+            newpath = found_path(classes, node, end, path)
+            if newpath: return newpath
+    return None
 
-print(a.val)
-print(b.val)
-print(c.val)
+
+def answer(classes, parent, child):
+    if not (parent or child) in classes or not found_path(classes, child, parent):
+        return 'No'
+    return 'Yes'
+
+
+n = int(input())
+for _ in range(n):
+    class_description = input().split()
+    class_name = class_description[0]
+    class_parents = class_description[2:]
+    add_class(classes, class_name, class_parents)
+
+q = int(input())
+for _ in range(q):
+    question = input().split()
+    parent = question[0]
+    child = question[1]
+    print(answer(classes, parent, child))
+
+"""
+4
+A
+B : A
+C : A
+D : B C
+4
+A B YES
+B D YES
+C D YES
+D A NO
+
+---
+12
+G : F
+A
+B : A
+C : A
+D : B C
+E : D
+F : D
+X
+Y : X A
+Z : X
+V : Z Y
+W : V
+9
+A G
+A Z  
+A W
+X W
+X QWE
+A X  
+X X
+1 1
+W
+ответы: 
+
+Yes
+No
+Yes
+Yes
+No
+No
+Yes
+No
+
+Yes
+
+"""
