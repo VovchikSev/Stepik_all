@@ -78,5 +78,5 @@
 # my_list2 = list(map(int, input().split()))
 # print(f"{sum(my_list1)}#{sum(my_list2)}")
 
-my_list = list(map(int, input().split()))
-print(sum(map(int, input().split())))
+my_list = input().split()
+[print(value) for value in my_list if not value.startswith("*")]
