@@ -78,5 +78,22 @@
 # my_list2 = list(map(int, input().split()))
 # print(f"{sum(my_list1)}#{sum(my_list2)}")
 
-my_list = input().split()
-[print(value) for value in my_list if not value.startswith("*")]
+# наименьший делитель числа
+# in_value = int(input())
+# divider = 0
+# stop_value = int(in_value ** .5)
+# current_divider = 2
+# count_iter = 1
+# while current_divider <= stop_value:
+#     print(count_iter)
+#     if not in_value % current_divider:
+#         divider = current_divider
+#         break
+#     current_divider += 1
+#     count_iter += 1
+# print(divider if divider else in_value)
+
+# Считайте целое число n
+# Напечатайте кубы всех натуральных чисел, меньших |n|, каждое с новой строки.
+# [print(value ** 3) for value in range(1, abs(int(input())))]
+
