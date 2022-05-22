@@ -97,3 +97,54 @@
 # Напечатайте кубы всех натуральных чисел, меньших |n|, каждое с новой строки.
 # [print(value ** 3) for value in range(1, abs(int(input())))]
 
+# def dfactorial(n):
+#     if n <= 0:
+#         return 1
+#     return n * dfactorial(n - 2)
+#
+# print(dfactorial(5))
+
+# https://stepik.org/lesson/59468/step/10?unit=37347
+# def convert(L: list) -> list:
+#     return list(map(lambda value: value if type(value) == int else int(value), L))
+#
+#
+# print(convert([1, 2, '3', '4', '5', 6]))
+
+# https://stepik.org/lesson/59468/step/11?unit=37347
+# def translate(value: int, foundation: int) -> int:
+#     ret_value = ""
+#     while value > 0:
+#         ret_value += str(value % foundation)
+#         value = value // foundation
+#     print(*reversed(ret_value), sep="")
+#
+#
+# translate(19, 2)
+
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
+#
+#
+# def sf(n):
+#     mult = 1
+#     for index in range(n + 1):
+#         mult *= factorial(index)
+#     return mult
+#
+#
+# print(sf(2))
+
+
+# def maxId(L: list) -> int:
+#     max_value_index = 0
+#     for index in range(len(L)):
+#         if int(L[index]) > int(L[max_value_index]):
+#             max_value_index = index
+#     return max_value_index
+#
+#
+# print(maxId([999]))
