@@ -112,15 +112,20 @@
 # print(convert([1, 2, '3', '4', '5', 6]))
 
 # https://stepik.org/lesson/59468/step/11?unit=37347
-# def translate(value: int, foundation: int) -> int:
+# def translate(value: int, foundation: int = 2) -> int:
 #     ret_value = ""
 #     while value > 0:
 #         ret_value += str(value % foundation)
 #         value = value // foundation
-#     print(*reversed(ret_value), sep="")
+#     return "".join(ret_value[:: -1])
 #
 #
-# translate(19, 2)
+# in_value = input().split()
+# if len(in_value) == 2:
+#     print(translate(int(in_value[0]), int(in_value[1])))
+# else:
+#     print(translate(int(in_value[0])))
+
 
 # def factorial(n):
 #     if n == 0:
@@ -134,8 +139,8 @@
 #     for index in range(n + 1):
 #         mult *= factorial(index)
 #     return mult
-#
-#
+
+
 # print(sf(2))
 
 
