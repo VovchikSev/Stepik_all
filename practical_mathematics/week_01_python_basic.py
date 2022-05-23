@@ -153,3 +153,56 @@
 #
 #
 # print(maxId([999]))
+
+
+# 2.8 Файлы
+# https://stepik.org/lesson/305015/step/3?unit=287494
+
+# with open(input(), "r", encoding='utf-8') as file:
+#     print(file.read())
+
+
+# my_sum = 0
+# with open("f:/numbers.txt", "r", encoding='utf-8') as file:
+#     for txt_num in file:
+#             my_sum += int(txt_num.strip())
+#
+# print(my_sum)
+
+# my_list = []
+# with open("f:/Abracadabra.txt", "r", encoding='utf-8') as file:
+#     for txt_num in file:
+#         my_list.append(txt_num)
+# print(my_list[-2])
+
+#
+# """
+# "mean1.txt"
+# 4
+# "sheet1.txt"
+# Аттила 2 (экзамен)
+# Бонапарт Наполеон (неявка)
+# Гассан Абдуррахман ибн Хоттаб 5 (автомат)
+# Задойный Алексей Владимирович 5 (экзамен)
+# Колонна-Валевский Александр Флориан Жозеф (недопуск)
+# Цезарь Гай Юлий 4 (экзамен)
+# """
+
+# file1_name = input()
+# file2_name = input()
+s = 0
+counter = 0
+with open("f:/sheet.txt", "r", encoding='utf-8') as file1:
+    for txt_num in file1:
+        t_list = txt_num.split()
+        if t_list[-1] in ["(экзамен)", "(автомат)"]:
+            s += int(t_list[-2])
+            counter += 1
+print(s, counter, s/counter)
+
+s2 = 0
+with  open("f:/mean1.txt", "r", encoding='utf-8') as file1:
+    t = file1.read()
+    print(t)
+
+ print(s2)
