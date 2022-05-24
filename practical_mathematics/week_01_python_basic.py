@@ -188,21 +188,18 @@
 # Цезарь Гай Юлий 4 (экзамен)
 # """
 
-# file1_name = input()
-# file2_name = input()
-s = 0
-counter = 0
-with open("f:/sheet.txt", "r", encoding='utf-8') as file1:
-    for txt_num in file1:
-        t_list = txt_num.split()
-        if t_list[-1] in ["(экзамен)", "(автомат)"]:
-            s += int(t_list[-2])
-            counter += 1
-print(s, counter, s/counter)
-
-s2 = 0
-with  open("f:/mean1.txt", "r", encoding='utf-8') as file1:
-    t = file1.read()
-    print(t)
-
- print(s2)
+# s = 0
+# counter = 0
+# with open("d:/sheet.txt", "r", encoding='utf-8') as file1:
+#     for txt_num in file1:
+#         t_list = txt_num.split()
+#         if t_list[-1] in ["(экзамен)", "(автомат)"]:
+#             s += int(t_list[-2])
+#             counter += 1
+# print(s, counter, s/counter)
+#
+# s2 = 0
+# with open("d:/mean1.txt", "r", encoding='utf-8') as file1:
+#     t = (list(map(float, file1)))
+#
+# print("OK" if s/counter == t[0] else "ERROR")
