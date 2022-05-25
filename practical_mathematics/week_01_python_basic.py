@@ -203,3 +203,45 @@
 #     t = (list(map(float, file1)))
 #
 # print("OK" if s/counter == t[0] else "ERROR")
+
+
+# import os.path
+# # f_name = input()
+# f_name = "d:/git"
+# # Проверьте есть ли такой файл (и файл ли это) и если он есть - выведите содержимое. Иначе выведите одну из 2 ошибок.
+# if os.path.exists(f_name):
+#     if os.path.isfile(f_name):
+#         with open(f_name, "r", encoding='utf-8') as file:
+#             print(file.read())
+#     else:
+#         print("ERROR:")
+#         print("Это каталог, а не файл")
+# else:
+#     print("ERROR:")
+#     print("Файл не существует")
+
+
+# in_str = input()
+# with open('d:/output.txt', 'w', encoding='utf-8') as file:
+#     file.write(in_str)
+
+
+#  проверить есть файл его прочесть, там нечто вроде такого:
+# https://stepik.org/lesson/305015/step/15?unit=287494
+# event 4 - 'git fetch origin' -- это нужно добавить
+# event 3 - 'git log -2'
+# event 2 - 'git log'
+# event 1 - 'git status'
+#  если файл не существует, сохранить event с номером 1: "event 4 - 'git fetch origin'"
+#  если существует, прочитать содержимое файла
+# это нужно прочитать
+import os.path
+event = "git fetch origin" # input()
+file_name = "d:/git.log"  # input()
+
+if os.path.isfile(file_name):
+    # файл существует, читать...
+    pass
+else:
+    # Файл не существует. Создать и вписать в него содержимое
+    pass
