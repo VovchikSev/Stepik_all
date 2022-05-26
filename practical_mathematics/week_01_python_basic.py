@@ -238,10 +238,24 @@
 import os.path
 event = "git fetch origin" # input()
 file_name = "d:/git.log"  # input()
-
+event_number = 1
+lines = []
 if os.path.isfile(file_name):
     # файл существует, читать...
-    pass
-else:
-    # Файл не существует. Создать и вписать в него содержимое
-    pass
+    with open(file_name, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+        # event_number = len(lines) + 1
+        for line in lines:
+            if line.startswith("event"):
+                event_number += 1
+lines = [f"event {event_number} - '{event}'\n"] + lines
+
+with open(file_name, 'w', encoding='utf-8') as file:
+    file.writelines(lines)
+
+
+"""
+event 3 - 'git log -2'
+event 2 - 'git log'
+event 1 - 'git status'
+"""
