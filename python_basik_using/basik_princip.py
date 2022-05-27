@@ -116,98 +116,78 @@ foo
 
 
 # https://github.com/mxmaslin/stepik/blob/master/Python%20-%20основы%20и%20применение/1.6%20Наследование%20классов%20%208.md
-classes = {}
+# classes = {}
+#
+#
+# def add_class(classes, class_name, parents):
+#     if class_name not in classes:
+#         classes[class_name] = []
+#     classes[class_name].extend(parents)
+#     for parent in parents:
+#         if parent not in classes:
+#             classes[parent] = []
+#
+#
+# def found_path(classes, start, end, path=[]):
+#     path = path + [start]
+#     if start == end:
+#         return path
+#     if start not in classes:
+#         return None
+#     for node in classes[start]:
+#         if node not in path:
+#             newpath = found_path(classes, node, end, path)
+#             if newpath: return newpath
+#     return None
+#
+#
+# def answer(classes, parent, child):
+#     if not (parent or child) in classes or not found_path(classes, child, parent):
+#         return 'No'
+#     return 'Yes'
+#
+#
+# n = int(input())
+# for _ in range(n):
+#     class_description = input().split()
+#     class_name = class_description[0]
+#     class_parents = class_description[2:]
+#     add_class(classes, class_name, class_parents)
+#
+# q = int(input())
+# for _ in range(q):
+#     question = input().split()
+#     parent = question[0]
+#     child = question[1]
+#     print(answer(classes, parent, child))
 
 
-def add_class(classes, class_name, parents):
-    if class_name not in classes:
-        classes[class_name] = []
-    classes[class_name].extend(parents)
-    for parent in parents:
-        if parent not in classes:
-            classes[parent] = []
+# class ExtendedStack(list):
+#     def sum(self):
+#         top1 = self.pop()
+#         top2 = self.pop()
+#         self.append(top1 + top2)
+#         return self
+#
+#     def sub(self):
+#         top1 = self.pop()
+#         top2 = self.pop()
+#         self.append(top1 - top2)
+#         return self
+#
+#     def mul(self):
+#         top1 = self.pop()
+#         top2 = self.pop()
+#         self.append(top1 * top2)
+#         return self
+#
+#     def div(self):
+#         top1 = self.pop()
+#         top2 = self.pop()
+#         self.append(top1 // top2)
+#         return self
 
-
-def found_path(classes, start, end, path=[]):
-    path = path + [start]
-    if start == end:
-        return path
-    if start not in classes:
-        return None
-    for node in classes[start]:
-        if node not in path:
-            newpath = found_path(classes, node, end, path)
-            if newpath: return newpath
-    return None
-
-
-def answer(classes, parent, child):
-    if not (parent or child) in classes or not found_path(classes, child, parent):
-        return 'No'
-    return 'Yes'
-
-
-n = int(input())
-for _ in range(n):
-    class_description = input().split()
-    class_name = class_description[0]
-    class_parents = class_description[2:]
-    add_class(classes, class_name, class_parents)
-
-q = int(input())
-for _ in range(q):
-    question = input().split()
-    parent = question[0]
-    child = question[1]
-    print(answer(classes, parent, child))
-
-"""
-4
-A
-B : A
-C : A
-D : B C
-4
-A B YES
-B D YES
-C D YES
-D A NO
-
----
-12
-G : F
-A
-B : A
-C : A
-D : B C
-E : D
-F : D
-X
-Y : X A
-Z : X
-V : Z Y
-W : V
-9
-A G
-A Z  
-A W
-X W
-X QWE
-A X  
-X X
-1 1
-W
-ответы: 
-
-Yes
-No
-Yes
-Yes
-No
-No
-Yes
-No
-
-Yes
-
-"""
+# class LoggableList(Loggable, list):
+#     def append(self, arg):
+#         super(LoggableList, self).append(arg)
+#         self.log(arg)
