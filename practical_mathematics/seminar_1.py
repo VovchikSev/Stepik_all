@@ -95,6 +95,30 @@ list_b = [0, 6, 19, 33, 42, 55, 66, 77, 99, 101, 256]
 #     # максимальное значение n = 604 иначе размера инт не хватает
 #     return int(((1 + sqrt_5) ** n - (1 - sqrt_5) ** n) / (2 ** n * sqrt_5))
 #
-#
-#
 # print(fib(604))
+
+# 10. Простые числа
+# def is_prime(n):
+#     result = True
+#     for value in range(2, int(n ** .5) + 1):
+#         result = bool(n % value)
+#         if not result:
+#             break
+#     return result
+#
+#
+# print(is_prime(103))
+
+#
+s = input()
+def fix_start(s):
+    result = ''
+    for index in range(len(s)):
+        if index and s[index] == s[0]:
+            result += '*'
+        else:
+            result += s[index]
+    return result
+
+
+print(fix_start(s))
