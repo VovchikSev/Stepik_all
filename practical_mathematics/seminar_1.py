@@ -20,11 +20,47 @@
 # print(lim)
 
 #  3.2 ДЗ семинара 2. Производная
-# from math import e
+from math import e
 # import numpy as np
 # import matplotlib.pyplot as plt
+
+
+# def f(x):
+#     return e ** x
+#     # return x ** 2
+
+
+# def g(x):
+#     return a * x + b
+
+
+# def def_e(x):
+#
+#     def f_x(x_):
+#         return e ** x_
+#     return f_x(x)
 #
 #
+#
+# print(def_e(3))
+# x0 = 3
+# dx = 0.000000001
+# a = (f(x0 + dx) - f(x0)) / dx
+# b = f(x0) - a * x0
+# print(round(a, 3), b)
+
+# x = np.arange(-1, 2, 0.01)
+#
+# plt.plot(x, f(x))
+# plt.plot(x, g(x))
+# plt.grid()
+# plt.show()
+
+# g(x) = a * x + b
+#  f`(x0) = a
+#  b  = f(x) - a * x
+
+
 # def f(x_p):
 #     return x_p ** 2
 #     # return e ** x_p
@@ -44,11 +80,9 @@
 # b = f(x0) - a * x0
 # print(a)
 # print(b)
-# x = np.arange(-1, 2, .01)
-# plt.plot(x, f(x))
-# plt.plot(x, g(x))
-# plt.grid()
-# plt.show()
+
+
+
 
 #  3.2 ДЗ семинара 3. Список - чётные индексы
 #
@@ -61,8 +95,8 @@
 #         res += value
 # print(res)
 
-list_a = [0, 2, 3, 4, 5, 19, 42]
-list_b = [0, 6, 19, 33, 42, 55, 66, 77, 99, 101, 256]
+# list_a = [0, 2, 3, 4, 5, 19, 42]
+# list_b = [0, 6, 19, 33, 42, 55, 66, 77, 99, 101, 256]
 
 
 # def common(list_a, list_b):
@@ -110,15 +144,17 @@ list_b = [0, 6, 19, 33, 42, 55, 66, 77, 99, 101, 256]
 # print(is_prime(103))
 
 #
-s = input()
-def fix_start(s):
-    result = ''
-    for index in range(len(s)):
-        if index and s[index] == s[0]:
-            result += '*'
-        else:
-            result += s[index]
-    return result
-
-
-print(fix_start(s))
+# s = input()
+# def fix_start(s):
+#     result = ''
+#     for index in range(len(s)):
+#         if index and s[index] == s[0]:
+#             result += '*'
+#         else:
+#             result += s[index]
+#     return result
+#
+#
+# print(fix_start(s))
+# mln = lambda x: x * 10**6
+# print(mln(2.2) / 6443,  mln(5.9) / 1960, mln(6.9) / 3210, mln(17.6) / 2300)
