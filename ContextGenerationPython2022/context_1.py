@@ -36,21 +36,37 @@
 in_list = list(map(int, input().split()))
 shift = int(input())
 
-flag = shift < 0
-if abs(shift) > len(in_list):
-    # сдвиг больше длинны массива
-    shift = (abs(shift) % len(in_list) + 1) * (-1 if flag else 1)
+# flag = shift < 0
+# if abs(shift) > len(in_list):
+#     # сдвиг больше длинны массива
+#     shift = abs(shift) % len(in_list) * (-1 if flag else 1)
+if abs(shift) == len(in_list):
+    shift = 0
+else:
+    pass
+    # больше или меньше
 
 
 print(in_list, shift)
 
 if shift > 0:
-    left = in_list[shift * (-1):]
-    right = in_list[:shift * (-1)]
-    print(*left + right)
+    # left = in_list[-shift:]
+    # right = in_list[:-shift]
+    print(*in_list[-shift:] + in_list[:-shift])
 elif shift < 0:
-    pass
+    left = in_list[:-shift]
+    right = in_list[-shift:]
+    print(right + left)
 else:
     print(*in_list)
 
-
+# my_list[start:stop:step]
+# [:] - копия последовательности;
+# [::2] - четные элементы последовательности начиная с первого;
+# [1::2] - нечетные элементы последовательности начиная со второго;
+# [1:] - все элементы, кроме первого;
+# [:-1] - все элементы, кроме последнего;
+# [1:-1] - все элементы, кроме первого и последнего;
+# [::-1] - все элементы в обратном порядке (реверс последовательности);
+# [-2:0:-1] - все элементы, кроме первого и последнего, в обратном порядке;
+# [-2:0:-2] - каждый второй элемент, кроме первого и последнего, в обратном порядке;
