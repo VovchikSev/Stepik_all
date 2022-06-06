@@ -1,4 +1,3 @@
-
 # Сегодня Роман ждёт в гости своего друга Андрея, чтобы вместе решить контест по программированию.
 # Чтобы подготовиться к встрече, Роману необходимо посетить два магазина, расположенных рядом с его домом.
 # От дома до первого магазина ведёт дорожка длины d_1 метров, а до второго магазина ведёт дорожка длины d_2 метров.
@@ -33,32 +32,24 @@
 # 1
 # 5 1 2 3 4
 
-in_list = list(map(int, input().split()))
-shift = int(input())
-
-# flag = shift < 0
+# in_list = list(map(int, input().split()))
+# shift = int(input())
+#
+# negative = -1 if shift < 0 else 1
 # if abs(shift) > len(in_list):
 #     # сдвиг больше длинны массива
-#     shift = abs(shift) % len(in_list) * (-1 if flag else 1)
-if abs(shift) == len(in_list):
-    shift = 0
-else:
-    pass
-    # больше или меньше
-
-
-print(in_list, shift)
-
-if shift > 0:
-    # left = in_list[-shift:]
-    # right = in_list[:-shift]
-    print(*in_list[-shift:] + in_list[:-shift])
-elif shift < 0:
-    left = in_list[:-shift]
-    right = in_list[-shift:]
-    print(right + left)
-else:
-    print(*in_list)
+#     shift = abs(shift) % len(in_list) * negative
+#
+# print(in_list, shift)
+#
+# if shift > 0:
+#     print(*in_list[-shift:] + in_list[:-shift])
+# elif shift < 0:
+#     # left = in_list[:-shift]
+#     # right = in_list[-shift:]
+#     print(in_list[-shift:] + in_list[:-shift])
+# else:
+#     print(*in_list)
 
 # my_list[start:stop:step]
 # [:] - копия последовательности;
@@ -70,3 +61,54 @@ else:
 # [::-1] - все элементы в обратном порядке (реверс последовательности);
 # [-2:0:-1] - все элементы, кроме первого и последнего, в обратном порядке;
 # [-2:0:-2] - каждый второй элемент, кроме первого и последнего, в обратном порядке;
+
+
+# ru  en
+# en_set = set("AaBCcEeHKMOoPpTXxy")
+# ru_set = set("АаВСсЕеНКМОоРрТХху")
+#
+# in_list = []
+# for _ in range(3):
+#     in_value = input()
+#     if in_value in en_set:
+#         in_list.append("en")
+#     elif in_value in ru_set:
+#         in_list.append("ru")
+#     else:
+#         in_list.append("error")
+#
+# print(in_list[0] if len(set(in_list)) == 1 else "mix")
+
+# Напишите программу, которая принимает на вход строку текста. И выводит ту же строку
+# в одном регистре, который зависит от того, каких букв больше.
+# При равном количестве требуется вывести строку в нижнем регистре.
+
+# in_word = input()
+# low_counter = 0
+# up_counter = 0
+# for ch in in_word:
+#     if ch.isalpha():
+#         if ch.isupper():
+#             up_counter += 1
+#         else:
+#             low_counter += 1
+# print(up_counter, low_counter)
+# print(in_word.upper() if up_counter > low_counter else in_word.lower())
+
+
+def choose_plural(value: int, choose_list: list):
+
+    n2 = value % 100
+    if 11 <= n2 <= 19:
+        return f"{value} {choose_list[2]}"
+    else:
+        n1 = value % 10
+        if n1 == 0 or 5 <= n1 <= 9:
+            return f"{value} {choose_list[2]}"
+        elif n1 == 1:
+            return f"{value} {choose_list[0]}"
+        elif 2 <= n1 <= 4:
+            return f"{value} {choose_list[1]}"
+
+
+print(choose_plural(20021, ['яблоко', 'яблока', 'яблок']))
