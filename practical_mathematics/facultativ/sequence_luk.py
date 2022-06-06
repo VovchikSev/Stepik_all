@@ -4,12 +4,10 @@
 # L0, L1 - 0й и 1й члены последовательности соответственно
 # n - номер числа из последовательности, которое необходимо вернуть
 
-def luka(L0, L1, n):
-    # L2 = L0 + L1
-    res_list = [L0, L1]
-    while len(res_list) <= n + 1:
-        res_list.append(res_list[-1] + res_list[-2])
-    return res_list[n]
+# def luka(L0, L1, n):
+#     for i in range(n):
+#         L1, L0 = L0 + L1, L1
+#     return L0
 
 
 from decimal import *
@@ -17,8 +15,9 @@ getcontext().prec = 50
 
 
 def fi(L0, L1, n):
-    # res_list = [Decimal(luka(L0, L1, n)), Decimal(luka(L0, L1, n - 1))]
-    return Decimal(luka(L0, L1, n)) / Decimal(luka(L0, L1, n - 1))
+    for i in range(2, n+1):
+        L0, L1 = L1, L0 + L1
+    return Decimal(L1) / Decimal(L0)
 
 
 print(fi(*map(int, input().split())))
