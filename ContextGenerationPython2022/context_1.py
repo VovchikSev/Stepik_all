@@ -47,7 +47,7 @@
 # elif shift < 0:
 #     # left = in_list[:-shift]
 #     # right = in_list[-shift:]
-#     print(in_list[-shift:] + in_list[:-shift])
+#     print(*in_list[-shift:] + in_list[:-shift])
 # else:
 #     print(*in_list)
 
@@ -96,19 +96,19 @@
 # print(in_word.upper() if up_counter > low_counter else in_word.lower())
 
 
-def choose_plural(value: int, choose_list: list):
-
-    n2 = value % 100
-    if 11 <= n2 <= 19:
-        return f"{value} {choose_list[2]}"
-    else:
-        n1 = value % 10
-        if n1 == 0 or 5 <= n1 <= 9:
-            return f"{value} {choose_list[2]}"
-        elif n1 == 1:
-            return f"{value} {choose_list[0]}"
-        elif 2 <= n1 <= 4:
-            return f"{value} {choose_list[1]}"
-
-
-print(choose_plural(20021, ['яблоко', 'яблока', 'яблок']))
+# def choose_plural(value: int, choose_list: list):
+#
+#     n2 = value % 100
+#     if 11 <= n2 <= 19:
+#         return f"{value} {choose_list[2]}"
+#     else:
+#         n1 = value % 10
+#         if n1 == 0 or 5 <= n1 <= 9:
+#             return f"{value} {choose_list[2]}"
+#         elif n1 == 1:
+#             return f"{value} {choose_list[0]}"
+#         elif 2 <= n1 <= 4:
+#             return f"{value} {choose_list[1]}"
+#
+#
+# print(choose_plural(20021, ['яблоко', 'яблока', 'яблок']))
