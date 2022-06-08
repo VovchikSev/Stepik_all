@@ -10,14 +10,26 @@
 #     return L0
 
 
-from decimal import *
-getcontext().prec = 50
+# from decimal import *
+# getcontext().prec = 50
+#
+#
+# def fi(L0, L1, n):
+#     for i in range(2, n+1):
+#         L0, L1 = L1, L0 + L1
+#     return Decimal(L1) / Decimal(L0)
+#
+#
+# print(fi(*map(int, input().split())))
+
+def super_L(n):
+
+    n0, n1 = 2, 1
+    for _ in range(2, n + 1):
+        n0, n1 = n1, n1 + n0
+    return n1
 
 
-def fi(L0, L1, n):
-    for i in range(2, n+1):
-        L0, L1 = L1, L0 + L1
-    return Decimal(L1) / Decimal(L0)
+print(super_L(1200))
 
 
-print(fi(*map(int, input().split())))
