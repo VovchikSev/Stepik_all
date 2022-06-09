@@ -31,7 +31,48 @@
 # Напишите программу, которая выводит те числа, которые повторяются в списке более одного раза.
 # 4 8 0 3 4 2 0 3
 # 0 3 4
-in_list = [int(value) for value in input().split()]
-print(*set([value for value in  in_list if in_list.count(value) > 1]))
+# in_list = [int(value) for value in input().split()]
+# print(*set([value for value in  in_list if in_list.count(value) > 1]))
+
+"""
+6
+ivan-petrov@beegeek.bzz
+petr-ivanov@beegeek.bzz
+ivan-petrov1@beegeek.bzz
+ivan-ivanov@beegeek.bzz
+ivan-ivanov1@beegeek.bzz
+ivan-ivanov2@beegeek.bzz
+3
+ivan-ivanov
+petr-petrov
+petr-ivanov
+
+Sample Output 1:
+ivan-ivanov3@beegeek.bzz
+petr-petrov@beegeek.bzz
+petr-ivanov1@beegeek.bzz
+"""
+base_list = []
+domain = ""
+for _ in range(int(input())):
+    name, domain = input().split("@")
+    base_list.append(name)
+
+new_names = []
+for _ in range(int(input())):
+    new_names.append(input())
+
+for value in new_names:
+    filter_list = list(filter(lambda s: s[:len(value)] == value, base_list))
+    if len(filter_list) == 0:
+        name = value
+    else:
+        name = value + str(len(filter_list))
+    base_list.append(name)
+    print(name + "@" + domain)
+    # print(filter_list)
+    # найти все записи с value
 
 
+# print(base_list)
+# print(new_names)
