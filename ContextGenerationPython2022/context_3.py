@@ -62,14 +62,29 @@ new_names = []
 for _ in range(int(input())):
     new_names.append(input())
 
+
+def get_min_name(in_name: str, list_names) -> str:
+    len_name = len(in_name)
+    list_in_indexes = [int(value[len_name:]) if len(value[len_name:]) else 0 for value in list_names]
+    for idx in range(len(list_in_indexes) + 1):
+        if idx not in list_in_indexes:
+            return in_name + (str(idx) if idx else "")
+
+
 for value in new_names:
     filter_list = list(filter(lambda s: s[:len(value)] == value, base_list))
     if len(filter_list) == 0:
         name = value
     else:
-        name = value + str(len(filter_list))
+        name = get_min_name(value, filter_list)
+
     base_list.append(name)
     print(name + "@" + domain)
+
+
+
+
+
     # print(filter_list)
     # найти все записи с value
 
