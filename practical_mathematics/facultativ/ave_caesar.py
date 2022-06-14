@@ -34,7 +34,7 @@
 #     print(*in_list)
 
 
-def caesar(text: str, key: int, alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+def caesar(text: str, key: int, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
     # alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if abs(key) > len(alphabet):
         key = abs(key) % len(alphabet) * (-1 if key < 0 else 1)
@@ -47,6 +47,16 @@ def caesar(text: str, key: int, alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
     return result_str
 
 
-def bruteforce(text, alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
-    pass
+def bruteforce(text, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+    len_count = len(alphabet)
+    for index in range(-1, -len_count, -1):
+        print(alphabet[index])
+        print(caesar(text, index, alphabet))
+
+
+all = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+t = "СТВМФКМХОСРОВФЖОВФКМЖКСВЛФРП"
+bruteforce(t, all)
+
+
 
