@@ -34,8 +34,8 @@
 #     print(*in_list)
 
 
-def caesar(text: str, key: int) -> str:
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+def caesar(text: str, key: int, alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+    # alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if abs(key) > len(alphabet):
         key = abs(key) % len(alphabet) * (-1 if key < 0 else 1)
     prepared_text = "".join(filter(lambda x: x in alphabet, text.upper()))
@@ -47,10 +47,6 @@ def caesar(text: str, key: int) -> str:
     return result_str
 
 
-shift = 42
-message = "In cryptography, a Caesar cipher"
+def bruteforce(text, alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+    pass
 
-print(caesar(text=message, key=shift))
-#-3
-# YDSHOFJEWHQFXOQSQUIQHSYFXUHQBIEADEMDQISQUIQHISYFXUHJXUIXYVJSYFXUHSQUIQHISETUEHSQUIQHIXYVJYIEDUEVJXUIYCFBUIJ
-# INCRYPTOGRAPHYACAESARCIPHERALSOKNOWNASCAESARSCIPHERTHESHIFTCIPHERCAESARSCODEORCAESARSHIFTISONEOFTHESIMPLESTANDMOSTWID
