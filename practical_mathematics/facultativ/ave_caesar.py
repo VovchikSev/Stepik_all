@@ -34,29 +34,40 @@
 #     print(*in_list)
 
 
-def caesar(text: str, key: int, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
-    # alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    if abs(key) > len(alphabet):
-        key = abs(key) % len(alphabet) * (-1 if key < 0 else 1)
-    prepared_text = "".join(filter(lambda x: x in alphabet, text.upper()))
-    crypted_alphabet = alphabet[key:] + alphabet[:key]
+# def caesar(text: str, key: int, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+#     # alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     if abs(key) > len(alphabet):
+#         key = abs(key) % len(alphabet) * (-1 if key < 0 else 1)
+#     prepared_text = "".join(filter(lambda x: x in alphabet, text.upper()))
+#     crypted_alphabet = alphabet[key:] + alphabet[:key]
+#
+#     result_str = ""
+#     for ch in prepared_text:
+#         result_str = result_str + crypted_alphabet[alphabet.index(ch)]
+#     return result_str
+#
+#
+# def bruteforce(text, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+#     len_count = len(alphabet)
+#     for index in range(-1, -len_count, -1):
+#         print(alphabet[index])
+#         print(caesar(text, index, alphabet))
+####################################################################
+# def get_offset_char(text: str, offset: int, alphabet:str) -> str:
+#     crypt_alphabet = alphabet[offset:] + alphabet[:offset]
+#     return crypt_alphabet[alphabet.index(text)]
+#
+#
+# def jarriquez_encryption(text, key, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ', reverse=False) -> str:
+#     keys = str(key)  # list(map(int, str(key)))
+#     keys = keys * (len(text) // len(keys) + 1)
+#     prepared_text = "".join(filter(lambda x: x in alphabet, text.upper()))
+#     result = ""
+#     for index in range(len(prepared_text)):
+#         offset = - int(keys[index]) if reverse else int(keys[index])
+#         result = result + get_offset_char(prepared_text[index], offset, alphabet)
+#     print(result)
 
-    result_str = ""
-    for ch in prepared_text:
-        result_str = result_str + crypted_alphabet[alphabet.index(ch)]
-    return result_str
-
-
-def bruteforce(text, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
-    len_count = len(alphabet)
-    for index in range(-1, -len_count, -1):
-        print(alphabet[index])
-        print(caesar(text, index, alphabet))
-
-
-all = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-t = "СТВМФКМХОСРОВФЖОВФКМЖКСВЛФРП"
-bruteforce(t, all)
 
 
 
