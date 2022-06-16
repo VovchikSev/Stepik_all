@@ -43,7 +43,7 @@
 #     result_str = ""
 #     for ch in prepared_text:
 #         result_str = result_str + crypted_alphabet[alphabet.index(ch)]
-#     return result_str
+#      return result_str
 #
 #
 # def bruteforce(text, alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
@@ -94,9 +94,15 @@
 #     if jarriquez_encryption(in_text, index, alphabet, reverse=True):
 #         print(f"{time.time() - start:>.4f}")
 #         break
-import random
-from random import shuffle
-alphabet = random.shuffle( input())
-print(alphabet)
 
+from random import shuffle
+
+
+def disc_generator(alphabet: str) -> str:
+    alphabet = list(alphabet)
+    shuffle(alphabet)
+    return "".join(alphabet)
+
+
+print(disc_generator(input()))
 
