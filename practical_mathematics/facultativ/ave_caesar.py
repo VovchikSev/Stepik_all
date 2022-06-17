@@ -1,4 +1,3 @@
-
 # Программа должна циклически сдвинуть данный набор чисел на nn шагов и вывести полученный результат,
 # разделяя числа символом пробела. Если nn является положительным числом,
 # сдвиг происходит вправо, если отрицательным — влево.
@@ -156,45 +155,70 @@
 ######################################################
 # https://github.com/Igor999/Encryption-of-a-cylinder-of-Jefferson/blob/master/Jefferson.py
 ######################################################
-import random
-#n = int(input())
-#clear_alphabet = input()
-discs = []
-random.seed(42)
-for i in range(n):
-    alph = list(map(str, clear_alphabet))
-    random.shuffle(alph)
-    discs.append(alph)
-d = []
-strok = ""
-for i in discs:
-    for o in i:
-        strok += o
-    d.append(strok)
-    strok = ""
-discs = d
-#print("DISCS:")
-#for i in discs:
-#    print(i)
-#print()
-
-
-def jefferson_encryption(text, discs, step, reverse=False):
-    text = text.upper()
+# import random
+# n = 6
+# clear_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# discs = []
+# random.seed(42)
+# for i in range(n):
+#     alph = list(map(str, clear_alphabet))
+#     random.shuffle(alph)
+#     discs.append(alph)
+# d = []
+# rows = ""
+# for i in discs:
+#     for o in i:
+#         rows += o
+#     d.append(rows)
+#     rows = ""
+# discs = d
+# #print("DISCS:")
+# #for i in discs:
+# #    print(i)
+# #print()
+#
+#
+# def jefferson_encryption(text, discs, step, reverse=False):
+#     text = text.upper()
+#     new_text = ""
+#     for current_disk in text:
+#         if current_disk in clear_alphabet:
+#             new_text += current_disk
+#     k = 0
+#     result = ""
+#     for t in new_text:
+#         current_disk = discs[k].index(t)
+#         if reverse:
+#             current_disk = (current_disk - step) % len(clear_alphabet)
+#         else:
+#             current_disk = (current_disk + step) % len(clear_alphabet)
+#
+#         result +=discs[k][current_disk]
+#         k += 1
+#         if k > (n-1):
+#             k = 0
+#     return result
+#####################################################
+def kidds_encryption(text, reverse=False):
+    letter = ['e', 't', 'h', 'o', 's', 'n', 'a', 'i', 'r', 'f', 'd', 'l', 'm', 'b', 'y', 'g', 'u', 'v', 'c', 'p']
+    symbols = ['8', ';', '4', '‡', ')', '*', '5', '6', '(', '1', '†', '0', '9', '2', ':', '3', '?', '¶', '-', '.']
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    alphabet = alphabet.lower()
     new_text = ""
-    for i in text:
-        if i in clear_alphabet:
-            new_text+=i
-    k = 0
     result = ""
-    for t in new_text:
-        i = discs[k].index(t)
-        if reverse==False:
-            i = (i + step)%len(clear_alphabet)
-        elif reverse==True:
-            i = (i - step)%len(clear_alphabet)
-        result +=discs[k][i]
-        k += 1
-        if k>(n-1):
-            k = 0
+    if reverse:
+        for i in text:
+            ind = symbols.index(i)
+            result += letter[ind]
+    else:
+        text = text.lower()
+        for i in text:
+            if i in alphabet:
+                new_text += i
+        for i in new_text:
+            if i in letter:
+                ind = letter.index(i)
+                result += symbols[ind]
+            else:
+                result += ""
     return result
