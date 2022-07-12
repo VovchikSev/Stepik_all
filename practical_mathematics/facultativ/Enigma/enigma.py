@@ -78,7 +78,7 @@ def enigma(text, ref, rot1, rot2, rot3):
 
 # последовательность шифрования
 # rot3, rot2, rot3, ref, rot1, rot2, rot3
-
+# https://github.com/Xelerezex/learning-space/tree/3d7ff912088c9e602f2becd4522b8b97e7f9c109/stepik-courses/stepik-practice-python-math/03-facultative/4.7-enigma
 if __name__ == "__main__":
     print(enigma('A', 1, 1, 2, 3))  # U
 
