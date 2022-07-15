@@ -1,28 +1,12 @@
 
+in_str = "-1., 2.5, -3, 4.9, 5.5, -6, -7.0, 8.8, -9, 10, 11, 12, 13, -14.5"
+import numpy as np
+lst = list(map(float, in_str.split(", ")))
+print(lst)
+V1 = np.array(lst)
+V2 = np.array([lst[-2]])
+V3 = np.array(lst[::-1])
+V4 = np.array(lst[::-2])
+V5 = np.arange(len(lst))
 
-# if __name__ == "__main__":
-
-# in_value = int(input())
-# while in_value < 100:
-#     print(*list(filter(lambda val: not (val % 3) and not val % 5, [value for value in range(1, in_value + 1)])))
-#     break
-# else:
-#     print("слишком большое значение n")
-
-# in_value = int(input())
-# start = 1
-# in_day = 10
-# while in_day < in_value:
-#     in_day *= 1.1
-#     start += 1
-# print(start)
-
-lst_in = ["Муму", "Евгений Онегин", "Сияние", "Мастер и Маргарита", "Пиковая дама", "Колобок"]
-# lst_out = []
-while lst_in:
-    value = lst_in.pop(0)
-    if len(value.split()) == 1:
-        print(value, end=" ")
-        # lst_out.append(value)
-# print(*lst_out)
-
+print(V1.dtype(), V1)
