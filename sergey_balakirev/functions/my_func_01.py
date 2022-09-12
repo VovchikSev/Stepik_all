@@ -1,7 +1,17 @@
 
-def foo(in_str: str):
-  my_list = list(map(int, in_str.split()))
-  print(f"Периметр прямоугольника, равен {(my_list[0] * 2) + ((my_list[1] * 2))}")
+# def is_triangle(a:int, b:int, c:int) -> bool:
+#   in_list = sorted([a, b, c])
+#   print(in_list)
+#   return in_list[0] + in_list[1] > in_list[2]
 
+# def is_even(in_value:int) -> bool:
+#   return not bool( in_value % 2)
 
-foo(input())
+# # while (n := int(input())) != 1:
+#     # print(('', f'{n}\n')[is_even(n)], end='')
+# while True:
+#   value = int(input())  
+#   if value == 1:
+#     break
+#   if is_even(value):
+#     print(value)
