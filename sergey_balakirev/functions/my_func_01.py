@@ -17,9 +17,22 @@ def is_even(in_value:int) -> bool:
 #     print(value)
 
 
-in_list = list(map(int, input().split()))
+# in_list = list(map(int, input().split()))
 
-print(*list(filter(is_even, in_list)))
-for value in in_list:
-  if is_even(value):
-    print(value)
+# print(*list(filter(is_even, in_list)))
+# for value in in_list:
+#   if is_even(value):
+#     print(value)
+
+def get_sq_rec(a:int, b:int)->int:
+  return a * b
+
+def get_sq_quadre(a:int)->int:
+  return a * a
+
+
+tp = input().strip()
+if tp == "RECT":
+  get_sq = get_sq_rec
+else:
+  get_sq = get_sq_quadre  
