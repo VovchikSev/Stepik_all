@@ -24,15 +24,22 @@ def is_even(in_value:int) -> bool:
 #   if is_even(value):
 #     print(value)
 
-def get_sq_rec(a:int, b:int)->int:
-  return a * b
+# def get_sq_rec(a:int, b:int)->int:
+#   return a * b
 
-def get_sq_quadre(a:int)->int:
-  return a * a
+# def get_sq_quadre(a:int)->int:
+#   return a * a
 
 
-tp = input().strip()
-if tp == "RECT":
-  get_sq = get_sq_rec
-else:
-  get_sq = get_sq_quadre  
+# tp = input().strip()
+# if tp == "RECT":
+#   get_sq = get_sq_rec
+# else:
+#   get_sq = get_sq_quadre  
+
+
+def chck_str_len(in_str:str) ->bool:
+  return len(in_str) > 5
+
+
+print(*[value for value in input().split() if chck_str_len(value)])  
