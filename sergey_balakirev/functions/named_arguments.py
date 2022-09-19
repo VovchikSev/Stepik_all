@@ -82,3 +82,7 @@ def tag_creator(in_str:str, tag="div", up=True):
     if up:
         tag = tag.upper()
     return f"<{tag}>{in_str}</{tag}>"
+
+in_str = input()
+print(tag_creator(in_str))
+print(tag_creator(in_str, up=False))
