@@ -1,19 +1,14 @@
 
 
-lambda a: -a
+get_sq = lambda value: value * value
 
-lambda: return "hello lambda"
+print(get_sq(2))
 
-lambda d: (d += 1)
 
-lambda d: d += 1
+# Подвиг 3. Объявите анонимную (лямбда) функцию с двумя параметрами для деления одного целого числа на другое.
+# Если происходит деление на ноль, то функция должна возвращать значение None, иначе - результат деления.
+# Присвойте эту функцию переменной get_div. Вызывать функцию не нужно, только задать.
 
-lambda x, y: x+y
+get_div = lambda val1, val2: val1 / val2 if val2 else None
 
-lambda: "hello lambda"
-
-lambda x: x
-
-lambda x: return x
-
-lambda a, b: a, b = b, a
+print(get_div(10, 5))
