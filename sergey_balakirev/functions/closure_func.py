@@ -64,3 +64,17 @@
 # list
 # -5 6 8 11 0 111 -456 3
 
+
+# def external_foo(tp:str):
+#     def internamal_foo():
+#         in_list = list(map(int, input().split()))
+#         return in_list if tp == "list" else tuple(in_list)
+
+
+#     return internamal_foo
+
+
+
+# my_foo = external_foo(input())
+# print(my_foo())
+
