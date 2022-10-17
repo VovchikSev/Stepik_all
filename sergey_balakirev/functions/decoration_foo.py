@@ -167,8 +167,29 @@ t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e
 # Примените декоратор к первой функции и вызовите ее для введенной строки s на кириллице: s = input()
 
 
-def union_list(func):
-    def wrapper(*args, **kwargs):
-        l_en, l_ru = func(*args, **kwargs)
-        return dict(zip(l_en, l_ru))
+def decorator(function):
+    def wrapper(text):
+        message = function(text)
+        while '--' in message:
+            message = message.replace('--', '-')
+        return message
+
     return wrapper
+
+
+@decorator
+def converter(text):
+    result = []
+    for char in text:
+        if char in t:
+            result.append(t[char])
+        elif char in ": ;.,_":
+            result.append("-")
+        else:
+            result.append(char)
+
+    return ''.join(result)
+
+
+s = input().lower()
+print(converter(s))
