@@ -91,44 +91,77 @@ s = input()
 Sample Input: Декораторы - это круто!  Sample Output: dekoratory-eto-kruto-
 """
 
-t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
-     'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
-     'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
-     'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
+# t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+#      'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
+#      'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
+#      'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
 
 
-def pre_decorator(chars=" !?"):
-    def decorator(function):
-        def wrapper(message):
-            result = ""
-            in_str = function(message)
+# def pre_decorator(chars=" !?"):
+#     def decorator(function):
+#         def wrapper(message):
+#             result = ""
+#             in_str = function(message)
+#
+#             for char in in_str:
+#                 if char in chars:
+#                     result += '-'
+#                 else:
+#                     result += char
+#
+#             while "--" in result:
+#                 result = result.replace("--", "-")
+#
+#             return result
+#
+#         return wrapper
+#
+#     return decorator
+#
+#
+# @pre_decorator(chars="?!:;,. ")
+# def converter(text):
+#     text = text.lower()
+#     result = ""
+#     for char in text:
+#         if char in t:
+#             result += t[char]
+#         else:
+#             result += char
+#     return result
+#
+#
+# print(converter(input()))
 
-            for char in in_str:
-                if char in chars:
-                    result += '-'
-                else:
-                    result += char
+"""
+Подвиг 4. Объявите функцию с именем get_list и следующим описанием в теле функции:
+'''Функция для формирования списка целых значений'''
+Сама функция должна формировать и возвращать список целых чисел, который поступает на ее вход в виде строки 
+из целых чисел, записанных через пробел.
+Определите декоратор, который выполняет суммирование значений из списка этой функции и возвращает результат.
+Внутри декоратора декорируйте переданную функцию get_list с помощью команды @wraps (не забудьте сделать импорт: 
+from functools import wraps). Такое декорирование необходимо, чтобы исходная функция get_list 
+сохраняла свои локальные свойства: __name__ и __doc__.
+Примените декоратор к функции get_list, но не вызывайте ее.
+"""
 
-            while "--" in result:
-                result = result.replace("--", "-")
-
-            return result
-
-        return wrapper
-
-    return decorator
+from functools import wraps
 
 
-@pre_decorator(chars="?!:;,. ")
-def converter(text):
-    text = text.lower()
-    result = ""
-    for char in text:
-        if char in t:
-            result += t[char]
-        else:
-            result += char
+# здесь продолжайте программу
+def decorator(function):
+    @wraps(function)
+    def wrapper(text):
+        return sum(function(text))
+
+    # wrapper.__name__ = function.__name__
+    # wrapper.__doc__ = function.__doc__
+
+    return wrapper
+
+
+@decorator
+def get_list(numbers):
+    """Функция для формирования списка целых значений"""
+    result = [int(number) for number in numbers.split()]
     return result
-
-
-print(converter(input()))
