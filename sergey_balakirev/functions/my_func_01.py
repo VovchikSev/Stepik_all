@@ -1,4 +1,3 @@
-
 # def is_triangle(a:int, b:int, c:int) -> bool:
 #   in_list = sorted([a, b, c])
 #   print(in_list)
@@ -56,8 +55,13 @@
 # print(*a)
 
 
-def foo_mul(max_value:int, min_value: int)->int:
-    return max_value * min_value
+# def foo_mul(max_value:int, min_value: int)->int:
+#     return max_value * min_value
+#
+# in_lst = list(map(int, input().split()))
+# print(foo_mul(max(in_lst), min(in_lst)))
 
-in_lst = list(map(int, input().split()))
-print(foo_mul(max(in_lst), min(in_lst)))
+from random import randint as rnd, seed
+
+seed(1)
+print(rnd(10, 50))
