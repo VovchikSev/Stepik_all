@@ -69,9 +69,23 @@ Sample Input:   abc@it.ru dfd3.ru@mail biba123@list.ru sc_lib@list.ru $fg9@fd.co
 Sample Output:  abc@it.ru biba123@list.ru sc_lib@list.ru
 """
 
+from string import ascii_lowercase, ascii_uppercase
 
-def chck_mail(in_str: str) -> bool:
-    pass
+correct_chars = ascii_lowercase + ascii_uppercase + '1234567890_.@'
+
+
+def email_check(email):
+    if email.count('@') != 1 or email.count('.') != 1:
+        return False
+    elif email.index('.') < email.index('@'):
+        return False
+
+    for char in email:
+        if char not in correct_chars:
+            return False
+
+    return True
 
 
 in_lst = "abc@it.ru dfd3.ru@mail biba123@list.ru sc_lib@list.ru $fg9@fd.com".split()  # input().split()
+print(*tuple(filter(email_check, in_lst)))
