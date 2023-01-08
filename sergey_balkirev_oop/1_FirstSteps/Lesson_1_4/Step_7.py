@@ -31,7 +31,16 @@ P.S. В программе нужно дополнительно объявит�
 import sys
 
 # здесь объявляется класс StreamData
-
+class StreamData:
+    def create(self, fields, lst_values):
+        if len(fields) != len(lst_values):
+            return False
+        
+        for i, key in enumerate(fields):
+            setattr(self, key, lst_values[i])
+        return True
+        
+    
 class StreamReader:
     FIELDS = ('id', 'title', 'pages')
 
