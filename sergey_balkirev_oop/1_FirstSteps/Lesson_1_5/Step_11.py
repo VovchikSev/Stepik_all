@@ -37,7 +37,7 @@ class Cell:
     def __init__(self, around_mines=0, mine=False):
         self.around_mines = around_mines
         self.mine = mine
-        self.fl_open = True
+        self.fl_open = False
         
 
 class GamePole:
@@ -45,6 +45,7 @@ class GamePole:
         self._n = n
         self._m = minen
         self.pole = [[Cell() for n in range(self._n)] for n in range(self._n)]
+        self.init()
         
         
     def init(self):
@@ -52,16 +53,15 @@ class GamePole:
         while m < self._m:
             x = randint(0, self._n - 1)
             y = randint(0, self._n - 1)
-            if self.pole[x][y].mine:
-                continue
-            self.pole[x][y].mine = True
-            m += 1
-                
+            if not self.pole[x][y].mine:
+                self.pole[x][y].mine = True
+                m += 1
+        # self.show()
         idx = (-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)
         for x in range(self._n):
             for y in range(self._n):
                 if not self.pole[x][y].mine:
-                    mines = sum(self.pole[x + i][y + j] for i, j in idx if 0 <= i < self._n and 0 <= j < self._n)
+                    mines = sum(self.pole[x + i][y + j].mine for i, j in idx if 0 <= x + i < self._n and 0 <= y +j < self._n)
                     self.pole[x][y].around_mines = mines
     
     def show(self):
