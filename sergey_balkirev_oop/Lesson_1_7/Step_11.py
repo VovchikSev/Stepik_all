@@ -21,17 +21,32 @@ blocked - булево значение (True - приложение забло�
 Как хранить список приложений в объектах класса AppStore решите сами.
 P.S. В программе нужно только объявить классы с указанным функционалом.
 """
-
+class Application:
+    def __init__(self, name):
+        self.name = name
+        self.blocked = False
 class AppStore:
+    def __init__(self):
+        self.apps = {}
     def add_application(self, app):
-        pass
+        self.apps[id(app)] = app
     
     def remove_application(self, app):
-        pass
+        self.apps.pop(id(app))
     
     def block_application(self, app):
-        pass
+        _app = self.apps.get(id(app), False)
+        if not  _app:
+            return False
+        _app.blocked = True
+
     
     def total_apps(self):
-        pass
+        return len(self.apps)
+    
+if __name__ == '__main__':
+    store = AppStore()
+    app_youtube = Application("Youtube")
+    store.add_application(app_youtube)
+    store.remove_application(app_youtube)
     
