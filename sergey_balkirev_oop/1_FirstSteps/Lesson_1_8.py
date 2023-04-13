@@ -55,14 +55,54 @@ msg_lst_to = sv_to.get_data()
 Ваша задача реализовать классы Router, Server и Data в соответствии с приведенным техническим заданием (ТЗ). Что-либо выводить на экран не нужно.
 """
 
+
 class Server:
-    pass
+    server_ip = 1
+
+    def __init__(self):
+        self.buffer = []
+        self.router = None
+        self.ip = Server.server_ip
+        Server.server_ip += 1
+
+    def send_data(self, data):
+        if self.router:
+            self.router.buffer.append(data)
+
+    def get_data(self):
+        _buffer = self.buffer[:]
+        self.buffer.clear()
+        return _buffer
+
+    def get_ip(self):
+        return self.ip
+
 
 class Router:
-    pass
+    def __init__(self):
+        self.buffer = []
+        self.servers = {}
+
+    def link(self, server):
+        self.servers[server.ip] = server
+        server.router = self
+
+    def unlink(self, server: Server):
+        deleted = self.servers.pop(server.ip, False)
+        if deleted:
+            deleted.router = None
+
+    def send_data(self):
+        for data in self.buffer:
+            if data.ip in self.servers:
+                self.servers[data.ip].buffer.append(data)
+        self.buffer.clear()
+
 
 class Data:
-    pass
+    def __init__(self, msg, ip):
+        self.data = msg
+        self.ip = ip
 
 
 if __name__ == '__main__':
@@ -81,3 +121,10 @@ if __name__ == '__main__':
     router.send_data()
     msg_lst_from = sv_from.get_data()
     msg_lst_to = sv_to.get_data()
+'''
+Error:
+Traceback (most recent call last):
+  File "jailed_code", line 72, in <module>
+    assert msg_lst_from[0].data == "Hi" and msg_lst_to[0].data == "Hello", "данные не прошли по сети, классы не функционируют должным образом"
+AttributeError: 'Data' object has no attribute 'data'
+'''
