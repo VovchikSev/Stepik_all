@@ -21,3 +21,6 @@ P.S. В программе требуется объявить только кл
 class Book:
     def __init__(self, autor, book_name, book_cost):
         pass
+
+if __name__ == "__main__":
+    pass    
