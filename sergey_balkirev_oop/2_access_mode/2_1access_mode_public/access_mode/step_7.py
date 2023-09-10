@@ -19,8 +19,37 @@ __price - целое число с ценой книги.
 P.S. В программе требуется объявить только класс. Ничего на экран выводить не нужно.
 '''
 class Book:
-    def __init__(self, autor, book_name, book_cost):
-        pass
+    def __init__(self, author, title, price):
+        self.set_author(author) 
+        self.set_title(title)
+        self.set_price(price)
+        
+        
+    def set_title(self, title):
+        self.__title = title
+        
+    def set_author(self, author):
+        self.__author = author
+        
+    def set_price(self, price):
+        self.__price = price
+    
+    def get_title(self):
+        return self.__title
+    
+    def get_author(self):
+        return self.__author
+    
+    def get_price(self):
+        return self.__price
+            
 
 if __name__ == "__main__":
-    pass    
+    # из реального теста 
+    book = Book('50 Cent', 'Aboba', 999)
+    book.set_title('Amogus')
+    book.set_author('NLE Choppa')
+    book.set_price(123)
+    book.get_title()
+    book.get_author()
+    book.get_price()
